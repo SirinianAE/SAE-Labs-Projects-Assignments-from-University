@@ -1,0 +1,32 @@
+package inputManager;
+
+import java.util.ArrayList;
+import taxpayer.Taxpayer;
+
+public class InputManager {
+	private ArrayList<String> fileDataList = null;
+	private BunchOfDataFromInputTxtFileCreator
+	bunchOfDataFromInputTxtFileCreator =
+	new BunchOfDataFromInputTxtFileCreator();
+	private BunchOfDataFromInputXmlFileCreator
+	bunchOfDataFromInputXmlFileCreator =
+	new BunchOfDataFromInputXmlFileCreator();
+	
+	public void createTaxpayerDataListFromXmlFile(String filePath){
+		fileDataList = new ArrayList<String>();
+		fileDataList = bunchOfDataFromInputXmlFileCreator.
+				createBunchOfDataFromInputFile(filePath);
+	}
+	
+	public void createTaxpayerDataListFromTextFile(String filePath){
+		fileDataList = new ArrayList<String>();
+		fileDataList = bunchOfDataFromInputTxtFileCreator.
+				createBunchOfDataFromInputFile(filePath);
+	}
+	
+	public Taxpayer getTaxpayerFromFileDataList(){
+		Taxpayer myTaxpayer = new Taxpayer();
+		myTaxpayer.initializeTaxpayer(fileDataList);
+		return myTaxpayer;
+	}
+}

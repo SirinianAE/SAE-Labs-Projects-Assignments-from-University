@@ -1,0 +1,69 @@
+package receipt;
+
+import java.util.ArrayList;
+import company.Company;
+
+public class Receipt {
+	private int receiptCode = 0;
+	private String dateOfIssue = "";
+	private String category = "none";
+	private int amountPaid = 0;
+	private Company seller = new Company();
+	
+	public void initializeReceipt(ArrayList<String> receiptData){
+		receiptCode = Integer.parseInt(receiptData.get(0));
+		dateOfIssue = receiptData.get(1);
+		category = receiptData.get(2);
+		amountPaid = Integer.parseInt(receiptData.get(3));
+		seller.setCompanyName(receiptData.get(4));
+		seller.setCountry(receiptData.get(5));
+		seller.setCity(receiptData.get(6));
+		seller.setStreet(receiptData.get(7));
+		seller.setStreetNumber(Integer.parseInt(receiptData.get(8)));
+	}
+	
+	public void initializeReceipt(String category, int receiptCode,
+			String dateOfIssue, int amountPaid, String companyName,
+			String country, String city, String street,
+			int streetNumber)
+	{
+		this.category = category;
+		this.receiptCode = receiptCode;
+		this.dateOfIssue = dateOfIssue;
+		this.amountPaid = amountPaid;
+		seller.initializeCompany(companyName, country, city, street,
+				streetNumber);
+	}
+	
+	public int getReceiptCode(){
+		return receiptCode;
+	}
+	
+	public String getDateOfIssue(){
+		return dateOfIssue;
+	}
+	
+	/*
+	public String getCategory(){
+		return category;
+	}
+	*/
+	
+	public int getAmountPaid(){
+		return amountPaid;
+	}
+	
+	public Company getSeller(){
+		return seller;
+	}
+	
+	public ArrayList<String> createReceiptBunchOfData(){
+		ArrayList<String> bunchOfData = new ArrayList<String>();
+		bunchOfData.add(receiptCode+"");
+		bunchOfData.add(dateOfIssue);
+		bunchOfData.add(category+"");
+		bunchOfData.add(amountPaid+"");
+		bunchOfData.addAll(seller.createCompanyBunchOfData());
+		return bunchOfData;
+	}
+}

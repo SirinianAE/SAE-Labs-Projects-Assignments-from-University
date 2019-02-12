@@ -1,0 +1,22 @@
+package taxpayer;
+
+public class MarriedFilingSeparatelyTaxpayer extends Taxpayer {
+	public double getBasicTax() {
+		float income = getIncome();
+		if (0 >= income && income < 18040) {
+			return 5.35 * income / 100;
+		}
+		else if (18040 >= income && income < 71680) {
+			return 965.14 + 7.05 * (income - 18040) / 100;
+		}
+		else if (71680 >= income && income < 90000) {
+			return 4746.76 + 7.85 * (income - 71680) / 100;
+		}
+		else if (90000 >= income && income < 127120) {
+			return 6184.88 + 7.85 * (income - 90000) / 100;
+		}
+		else {
+			return 9098.80 + 9.85 * (income - 127120) / 100;
+		}
+	}
+}

@@ -1,0 +1,253 @@
+package outputManager;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import taxpayer.Taxpayer;
+
+public class InfoFileUpdater {
+	private String domain;
+	
+	/////NEW CODE////////////////////////////////////////////////////
+	private String xmlFullDomain;
+	private String textFullDomain;
+	private ArrayList<String> bunchOfDataForTextFile;
+	private ArrayList<String> bunchOfDataForXmlFile;
+	private ArrayList<String> bunchOfUsefulData;
+	private ArrayList<String> bunchOfOpeningTagData;
+	private File textFile;
+	private File xmlFile;
+	private Taxpayer outputManagerTaxpayer = null;
+	
+	public InfoFileUpdater(Taxpayer outputManagerTaxpayer, String domain){
+		this.outputManagerTaxpayer = outputManagerTaxpayer;
+		this.domain = domain;
+		initializeFullPathForXmlFile(outputManagerTaxpayer);
+		initializeFullPathForTxtFile(outputManagerTaxpayer);
+		textFile = new File(textFullDomain);
+		xmlFile = new File(xmlFullDomain);
+		createBunchOfOpeningTagData();
+	}
+	
+	
+	public void createInfoTextFile(){
+		System.out.println("//////In createLogTextFile//////");
+		System.out.println(textFullDomain);
+		completeBunchOfDataForTextFile();
+		try{
+			PrintWriter output = new PrintWriter(textFile);
+			for(String myString: bunchOfDataForTextFile){
+				System.out.println(myString);
+				output.println(myString);
+			}
+			output.close();
+		}catch (IOException ex){
+			System.out.printf("ERROR: %s\n", ex);
+		}
+	}
+
+	public void createInfoXmlFile(){
+		completeBunchOfDataForXmlFile();
+		try{
+			PrintWriter output = new PrintWriter(xmlFile);
+			for(String myString: bunchOfDataForXmlFile){
+				output.println(myString);
+			}
+			output.close();
+		}catch (IOException ex){
+			System.out.printf("ERROR: %s\n", ex);
+		}
+	}
+	
+	private void completeBunchOfDataForTextFile(){
+		System.out.println("///////In completeBunchOfDataForTextFile////////");
+		createBunchOfUsefulData();
+		bunchOfDataForTextFile = new ArrayList<String>();
+		for(int i=0; i<bunchOfUsefulData.size(); i++){
+			bunchOfDataForTextFile.add(createStartingTextFormat(
+					bunchOfOpeningTagData.get(i)) +
+					bunchOfUsefulData.get(i));
+		}
+		System.out.println(bunchOfDataForTextFile);
+	}
+	
+	private void completeBunchOfDataForXmlFile(){
+		System.out.println("///////In completeBunchOfDataForXmlFile////////");
+		createBunchOfUsefulData();
+		bunchOfDataForXmlFile = new ArrayList<String>();
+		for(int i=0; i<bunchOfUsefulData.size(); i++){
+			bunchOfDataForXmlFile.add(createStartingXmlFormat(
+					bunchOfOpeningTagData.get(i)) +
+					bunchOfUsefulData.get(i) +
+					createFinishingXmlFormat(bunchOfOpeningTagData
+							.get(i)));
+		}
+		System.out.println(bunchOfDataForXmlFile);
+	}
+	
+	private void createBunchOfOpeningTagData(){
+		bunchOfOpeningTagData = new ArrayList<String>();
+		bunchOfOpeningTagData.add("Name");
+		bunchOfOpeningTagData.add("AFM");
+		bunchOfOpeningTagData.add("Status");
+		bunchOfOpeningTagData.add("Income");
+		bunchOfOpeningTagData.add("");
+		bunchOfOpeningTagData.add("");
+		bunchOfOpeningTagData.add("Receipts");
+		
+		for(int i=0; i<outputManagerTaxpayer.getTotalReceiptsGathered(); i++){
+			bunchOfOpeningTagData.add("");
+			bunchOfOpeningTagData.add("");
+			bunchOfOpeningTagData.add("Receipt ID");
+			bunchOfOpeningTagData.add("Date");
+			bunchOfOpeningTagData.add("Kind");
+			bunchOfOpeningTagData.add("Amount");
+			bunchOfOpeningTagData.add("Company");
+			bunchOfOpeningTagData.add("Country");
+			bunchOfOpeningTagData.add("City");
+			bunchOfOpeningTagData.add("Street");
+			bunchOfOpeningTagData.add("Number");
+		}
+	}
+	
+	private void createBunchOfUsefulData(){
+		bunchOfUsefulData = 
+				new ArrayList<String>();
+		ArrayList<String> bunchOfData =
+				outputManagerTaxpayer.getTaxpayerBunchOfData();
+		bunchOfUsefulData.add(bunchOfData.get(0));
+		bunchOfUsefulData.add(bunchOfData.get(1));
+		bunchOfUsefulData.add(bunchOfData.get(2));
+		bunchOfUsefulData.add(bunchOfData.get(3));
+		bunchOfUsefulData.add("");
+		bunchOfUsefulData.add("");
+		bunchOfUsefulData.add("");
+		
+		int temp = 13;
+		for(int i=0; i<outputManagerTaxpayer.getTotalReceiptsGathered(); i++){
+			bunchOfUsefulData.add("");
+			bunchOfUsefulData.add("");
+			bunchOfUsefulData.add(bunchOfData.get(temp++));
+			bunchOfUsefulData.add(bunchOfData.get(temp++));
+			bunchOfUsefulData.add(bunchOfData.get(temp++));
+			bunchOfUsefulData.add(bunchOfData.get(temp++));
+			bunchOfUsefulData.add(bunchOfData.get(temp++));
+			bunchOfUsefulData.add(bunchOfData.get(temp++));
+			bunchOfUsefulData.add(bunchOfData.get(temp++));
+			bunchOfUsefulData.add(bunchOfData.get(temp++));
+		}
+		
+		System.out.println("bunchOfData :"+bunchOfData);
+	}
+	
+	private String createStartingXmlFormat(String keyWord){
+		return "<"+keyWord+"> ";
+	}
+	
+	private String createFinishingXmlFormat(String keyWord){
+		return " </"+keyWord+">";
+	}
+	
+	private String createStartingTextFormat(String keyWord){
+		return keyWord+": ";
+	}
+	
+	private void initializeFullPathForXmlFile(Taxpayer taxp){
+		xmlFullDomain = domain + taxp.getAfm() + "_INFO.xml";
+	}
+	
+	private void initializeFullPathForTxtFile(Taxpayer taxp){
+		textFullDomain = domain + taxp.getAfm() + "_INFO.txt";
+	}
+	/////////////////////////////////////////////////////////////////
+	/*
+	public void createInfoTextFile(Taxpayer taxp){
+		ArrayList<String> myList = new ArrayList<String>();
+		String fullDomain = domain + taxp.getAfm() + "_INFO.txt";
+		File file = new File(fullDomain);
+		//lipi enas elenxos
+		myList.add("Name: " + taxp.getName());
+		myList.add("AFM: " + taxp.getAfm());
+		myList.add("Status: " + taxp.getFamilyStatus());
+		myList.add("Income: " + taxp.getIncome());
+		myList.add("");
+		myList.add("");
+		myList.add("Receipts:");
+		myList.add("");
+		myList.add("");
+		
+		for(int i=0; i<taxp.getReceipts().size(); i++){
+			//System.out.println(taxp.getReceipts().get(i).getReceiptCode());
+			myList.add("Receipt ID: " + taxp.getReceipts().get(i).getReceiptCode());
+			myList.add("Date: " + taxp.getReceipts().get(i).getDateOfIssue());
+			myList.add("Kind: " + taxp.getReceipts().get(i).getCategory());
+			myList.add("Amount: " + taxp.getReceipts().get(i).getAmountPaid());
+			myList.add("Company: " + taxp.getReceipts().get(i).getSeller().getCompanyName());
+			myList.add("Country: " + taxp.getReceipts().get(i).getSeller().getCountry());
+			myList.add("City: " + taxp.getReceipts().get(i).getSeller().getCity());
+			myList.add("Street: " + taxp.getReceipts().get(i).getSeller().getStreet());
+			myList.add("Number: " + taxp.getReceipts().get(i).getSeller().getStreetNumber());
+			myList.add("");
+			myList.add("");
+		}
+		
+		try{
+			PrintWriter output = new PrintWriter(file);
+			for(String myString: myList){
+				//System.out.println(myString);
+				output.println(myString);
+			}
+			output.close();
+		}catch (IOException ex){
+			System.out.printf("ERROR: %s\n", ex);
+		}
+		
+	}
+	
+	public void createInfoXmlFile(Taxpayer taxp){
+		ArrayList<String> myList = new ArrayList<String>();
+		String fullDomain = domain + taxp.getAfm() + "_INFO.xml";
+		File file = new File(fullDomain);
+		//lipi enas elenxos
+		myList.add("<Name> " + taxp.getName() + " </Name>");
+		myList.add("<AFM> " + taxp.getAfm() + " </AFM>");
+		myList.add("<Status> " + taxp.getFamilyStatus() + " </Status>");
+		myList.add("<Income> " + taxp.getIncome() + " </Income>");
+		myList.add("");
+		myList.add("");
+		myList.add("<Receipts>");
+		myList.add("");
+		myList.add("");
+		
+		for(int i=0; i<taxp.getReceipts().size(); i++){
+			myList.add("<ReceiptID> " + taxp.getReceipts().get(i).getReceiptCode() + " </ReceiptID>");
+			myList.add("<Date> " + taxp.getReceipts().get(i).getDateOfIssue() + " </Date>");
+			myList.add("<Kind> " + taxp.getReceipts().get(i).getCategory() + " </Kind>");
+			myList.add("<Amount> " + taxp.getReceipts().get(i).getAmountPaid() + " </Amount>");
+			myList.add("<Company> " + taxp.getReceipts().get(i).getSeller().getCompanyName() + " </Company>");
+			myList.add("<Country> " + taxp.getReceipts().get(i).getSeller().getCountry() + " </Country>");
+			myList.add("<City> " + taxp.getReceipts().get(i).getSeller().getCity() + " </City>");
+			myList.add("<Street> " + taxp.getReceipts().get(i).getSeller().getStreet() + " </Street>");
+			myList.add("<Number> " + taxp.getReceipts().get(i).getSeller().getStreetNumber() + " </Number>");
+			myList.add("");
+			myList.add("");
+		}
+		myList.add("</Receipts>");
+		
+		try{
+			PrintWriter output = new PrintWriter(file);
+			for(String myString: myList){
+				output.println(myString);
+			}
+			output.close();
+		}catch (IOException ex){
+			System.out.printf("ERROR: %s\n", ex);
+		}
+	}
+	*/
+	
+	public void setDomain(String domain){
+		this.domain = domain;
+	}
+}

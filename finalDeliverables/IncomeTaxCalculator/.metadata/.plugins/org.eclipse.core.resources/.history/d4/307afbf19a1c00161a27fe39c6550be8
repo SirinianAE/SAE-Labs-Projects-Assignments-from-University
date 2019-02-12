@@ -1,0 +1,78 @@
+package company;
+
+import java.util.ArrayList;
+
+public class Company {
+	private String companyName = "none";
+	private String country = "none";
+	private String city = "none";
+	private String street = "none";
+	private int streetNumber = 0;
+
+	public void initializeCompany(ArrayList<String> myList){
+		companyName = myList.get(0);
+		country = myList.get(1);
+		city = myList.get(2);
+		street = myList.get(3);
+		streetNumber = Integer.parseInt(myList.get(4));
+	}
+
+	public void initializeCompany(String companyName, String country,
+			String city, String street, int streetNumber){
+		this.companyName = companyName;
+		this.country = country;
+		this.city = city;
+		this.street = street;
+		this.streetNumber = streetNumber;
+	}
+	
+	public void setCompanyName(String companyName){
+		this.companyName = companyName;
+	}
+	
+	public String getCompanyName(){
+		return companyName;
+	}
+	
+	public void setCountry(String country){
+		this.country = country;
+	}
+	
+	public String getCountry(){
+		return country;
+	}
+	
+	public void setCity(String city){
+		this.city = city;
+	}
+	
+	public String getCity(){
+		return city;
+	}
+	
+	public void setStreet(String street){
+		this.street = street;
+	}
+	
+	public String getStreet(){
+		return street;
+	}
+	
+	public void setStreetNumber(int streetNumber){
+		this.streetNumber = streetNumber;
+	}
+	/*
+	public int getStreetNumber(){
+		return streetNumber;
+	}
+	*/
+	public ArrayList<String> createCompanyBunchOfData(){
+		ArrayList<String> bunchOfData = new ArrayList<String>();
+		bunchOfData.add(companyName);
+		bunchOfData.add(country);
+		bunchOfData.add(city);
+		bunchOfData.add(street);
+		bunchOfData.add(streetNumber+"");
+		return bunchOfData;
+	}
+}

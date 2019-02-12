@@ -1,0 +1,60 @@
+package outputManager;
+
+import taxpayer.Taxpayer;
+
+public class OutputManager {
+	private String domain;
+	private Taxpayer outputManagerTaxpayer;
+	private InfoFileUpdater myInfoFileUpdater = new InfoFileUpdater();
+	private LogFileCreator myLogFileCreator = new LogFileCreator();
+	private ChartCreator myChartCreator = new ChartCreator();
+	
+	public OutputManager(String domain, ){
+		this.domain = domain;
+	}
+	
+	public void updateDomain(String domain){
+		this.domain = domain;
+		myInfoFileUpdater.setDomain(domain);
+		myLogFileCreator.setDomain(domain);
+	}
+	
+	public void updateOutputManagerTaxpayer(
+			Taxpayer outputManagerTaxpayer){
+		System.out.println("///////In updateOutputManagerTaxpayer of outputManager//////////");
+		System.out.println("Taxpayer before: "+outputManagerTaxpayer);
+		this.outputManagerTaxpayer = outputManagerTaxpayer;
+		myInfoFileUpdater.setOutputManagerTaxpayer(
+				outputManagerTaxpayer);
+		myLogFileCreator.setOutputManagerTaxpayer(
+				outputManagerTaxpayer);
+		myChartCreator.setOutputManagerTaxpayer(
+				outputManagerTaxpayer);
+		outputManagerTaxpayer.createTaxpayerInformationString();
+		System.out.println("Taxpayer after: "+outputManagerTaxpayer.getTaxpayerInformationString());
+	}
+	
+	public void createInfoTextFile(){
+		myInfoFileUpdater.createInfoTextFile();
+	}
+	
+	public void createInfoXmlFile(){
+		myInfoFileUpdater.createInfoXmlFile();
+	}
+	
+	public void createLogTextFile(){
+		myLogFileCreator.createLogTextFile();
+	}
+	
+	public void createLogXmlFile(){
+		myLogFileCreator.createLogXmlFile();
+	}
+	
+	public void createBarChart(){
+		myChartCreator.createBarChart();
+	}
+	
+	public void createPieChart(){
+		myChartCreator.createPieChart();
+	}
+}

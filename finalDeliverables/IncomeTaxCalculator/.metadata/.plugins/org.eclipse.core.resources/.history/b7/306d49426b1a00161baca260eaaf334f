@@ -1,0 +1,123 @@
+package accountsManager;
+
+import java.util.ArrayList;
+
+import inputManager.BunchOfDataFromInputXmlFileCreator;
+import inputManager.InputFactory;
+import inputManager.InputManager;
+import taxpayer.Taxpayer;
+import outputManager.OutputManager;
+import receipt.Receipt;
+
+public class TaxpayerAccountsManager {
+	ArrayList<Taxpayer> taxpayersList = new ArrayList<Taxpayer>();
+	OutputManager outputManager;
+	String domain = "";
+	Taxpayer outputManagerTaxpayer = new Taxpayer();
+	
+	public TaxpayerAccountsManager(String domain, Taxpayer outputManagerTaxpayer){
+		outputManager = new OutputManager(domain, outputManagerTaxpayer);
+	}
+
+	public void deleteTaxpayer(Taxpayer taxpayerForDelete){
+		taxpayersList.remove(taxpayerForDelete);
+	}
+	
+	public void deleteTaxpayer(int Afm){
+		for(int i=0; i<taxpayersList.size(); i++){
+			if (taxpayersList.get(i).getAfm() == Afm){
+				taxpayersList.remove(i);
+			}
+			break;
+		}
+	}
+	
+	public void deleteReceiptFromTaxpayer(
+			Taxpayer taxpayerNeedingToDeleteReceipt, int receiptCode)
+	{
+		ArrayList<Receipt> receipts = taxpayerNeedingToDeleteReceipt.
+				getReceipts();
+		for(int i=0; i<receipts.size(); i++){
+			if(receipts.get(i).getReceiptCode() == receiptCode){
+				receipts.remove(i);
+				return;
+			}
+		}
+		System.out.println("!!!Receipt don't found!!!");
+	}
+	
+	public void insertNewReceiptForTaxpayer
+	(Taxpayer taxpayerNeedingNewReceipt, String category,
+			int receiptCode, String dateOfIssue, int amountPaid,
+			String companyName, String country, String city,
+			String street, int streetNumber)
+	{
+		Receipt newReceipt = new Receipt();
+		ArrayList<Receipt> receipts = taxpayerNeedingNewReceipt.
+				getReceipts();
+		newReceipt.initializeReceipt(category, receiptCode,
+				dateOfIssue, amountPaid, companyName, country, city,
+				street, streetNumber);
+		receipts.add(newReceipt);
+		taxpayerNeedingNewReceipt.setReceipts(receipts);
+	}
+
+	public void printTaxpayer(Taxpayer taxpayerForPrint){
+		taxpayerForPrint.toString();
+	}
+	
+	public Taxpayer getTaxpayer(String taxpayersName){
+		for(int i=0; i<taxpayersList.size(); i++){
+			if(taxpayersList.get(i).getName().equals(taxpayersName)){
+				return taxpayersList.get(i);
+			}
+		}
+		System.out.println("Error: Can't find taxpayer !!!");
+		return null;
+	}
+	
+	public Taxpayer getTaxpayer(int taxpayerAfm){
+		for(int i=0;i<taxpayersList.size(); i++){
+			if(taxpayersList.get(i).getAfm() == taxpayerAfm){
+				return taxpayersList.get(i);
+			}
+		}
+		System.out.println("Error: Cant't find taxpayer !!!");
+		return null;
+	}
+	
+	public void insertTaxpayerFromFile(String filePath){
+		InputManager myInputManager;
+		InputFactory myInputFactory = new InputFactory();
+		myInputManager = myInputFactory.
+				createBunchOfDataFromInputFile(filePath);
+		myInputManager.createBunchOfDataFromInputFile(filePath);
+		taxpayersList.add( myInputManager.
+				getTaxpayerFromFileDataList() );
+	}
+	
+	
+	public void createInfoXmlFile(){
+		outputManager.createInfoXmlFile();
+	}
+	
+	public void createLogXmlFile(){
+		outputManager.createLogXmlFile();
+	}
+	
+	public void createInfoTextFile(){
+		outputManager.createInfoTextFile();
+	}
+	
+	public void createLogTextFile(){
+		outputManager.createLogTextFile();
+	}
+	
+	public void createBarChart(){
+		outputManager.createBarChart();
+	}
+	
+	public void createPieChart(){
+		outputManager.createPieChart();
+	}
+}

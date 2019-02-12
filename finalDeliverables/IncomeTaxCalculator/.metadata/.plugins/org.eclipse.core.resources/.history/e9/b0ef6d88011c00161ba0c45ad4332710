@@ -1,0 +1,173 @@
+package outputManager;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import taxpayer.Taxpayer;
+
+public class LogFileCreator {
+	String domain;
+	
+	//New code///////////////////////////////////////////////////////
+	private Taxpayer outputManagerTaxpayer = null;
+	private String fullPath = "";
+	private ArrayList<String> bunchOfOpeningTagData = 
+			new ArrayList<String>();
+	private ArrayList<String> bunchOfUsefulData = 
+			new ArrayList<String>();
+	private ArrayList<String> bunchOfDataForTextFile = 
+			new ArrayList<String>();
+	private ArrayList<String> bunchOfDataForXmlFile = 
+			new ArrayList<String>();
+	private String textFullDomain;
+	private String xmlFullDomain;
+	private File xmlFile;
+	private File textFile;
+	
+	public LogFileCreator(){
+		initializeFullPathForTxtFile()
+		initializeFullPathForXmlFile();
+		xmlFile = new File(xmlFullDomain);
+		textFile = new File(textFullDomain);
+		createBunchOfOpeningTagData();
+		createBunchOfUsefulData();
+	}
+	
+	private String createStartingXmlFormat(String keyWord){
+		return "<"+keyWord+"> ";
+	}
+	
+	private String createFinishingXmlFormat(String keyWord){
+		return " </"+keyWord+">";
+	}
+	
+	private String createStartingTextFormat(String keyWord){
+		return keyWord+": ";
+	}
+	
+	private void initializeFullPathForXmlFile(Taxpayer taxp){
+		xmlFullDomain = domain + taxp.getAfm() + "_LOG.xml";
+	}
+	
+	private void initializeFullPathForTxtFile(Taxpayer taxp){
+		textFullDomain = domain + taxp.getAfm() + "_LOG.txt";
+	}
+	
+	private void completeBunchOfDataForTextFile(){
+		System.out.println("///////In completeBunchOfDataForTextFile////////");
+		for(int i=0; i<bunchOfUsefulData.size(); i++){
+			bunchOfDataForTextFile.add(createStartingTextFormat(
+					bunchOfOpeningTagData.get(i)) +
+					bunchOfUsefulData.get(i));
+		}
+		System.out.println(bunchOfDataForTextFile);
+	}
+	
+	private void completeBunchOfDataForXmlFile(){
+		for(int i=0; i<bunchOfUsefulData.size(); i++){
+			bunchOfDataForXmlFile.add(createStartingXmlFormat(
+					bunchOfOpeningTagData.get(i)) +
+					bunchOfUsefulData.get(i) +
+					createFinishingXmlFormat(bunchOfOpeningTagData
+							.get(i)));
+		}
+	}
+	
+	//TODO change create to initialize
+	private void createBunchOfOpeningTagData(){
+		bunchOfOpeningTagData.add("Name");
+		bunchOfOpeningTagData.add("AFM");
+		bunchOfOpeningTagData.add("Income");
+		bunchOfOpeningTagData.add("BasicTax");
+		bunchOfOpeningTagData.add("TaxIncrease");
+		bunchOfOpeningTagData.add("TotalTax");
+		bunchOfOpeningTagData.add("Receipts");
+		bunchOfOpeningTagData.add("Entertainment");
+		bunchOfOpeningTagData.add("Basic");
+		bunchOfOpeningTagData.add("Travel");
+		bunchOfOpeningTagData.add("Health");
+		bunchOfOpeningTagData.add("Other");
+	}
+	
+	private void createBunchOfUsefulData(){
+		ArrayList<String> bunchOfData =
+				outputManagerTaxpayer.getTaxpayerBunchOfData();
+		bunchOfUsefulData.add(bunchOfData.get(0));
+		bunchOfUsefulData.add(bunchOfData.get(1));
+		bunchOfUsefulData.add(bunchOfData.get(3));
+		bunchOfUsefulData.add(bunchOfData.get(4));
+		bunchOfUsefulData.add(bunchOfData.get(5));
+		bunchOfUsefulData.add(bunchOfData.get(6));
+		bunchOfUsefulData.add(bunchOfData.get(7));
+		bunchOfUsefulData.add(bunchOfData.get(8));
+		bunchOfUsefulData.add(bunchOfData.get(9));
+		bunchOfUsefulData.add(bunchOfData.get(10));
+		bunchOfUsefulData.add(bunchOfData.get(11));
+		bunchOfUsefulData.add(bunchOfData.get(12));
+	}
+	/////////////////////////////////////////////////////////////////
+	
+	public void createLogXmlFile(Taxpayer taxp){
+		ArrayList<String> myList = new ArrayList<String>();
+		String fullPath = domain + taxp.getAfm() + "_LOG.xml";
+		File file = new File(fullPath);
+		
+		myList.add("<Name> "  + taxp.getName() + " </Name>");
+		myList.add("<AFM> " + taxp.getAfm() + " </AFM>");
+		myList.add("<Income> " + taxp.getIncome() + " </Income>");
+		myList.add("<BasicTax> " + taxp.getBasicTax() + " </BasicTax>");
+		myList.add("<TaxIncrease> " + taxp.getTaxIncrease() + " </TaxIncrease>");
+		myList.add("<TotalTax> " + taxp.getTotalTax() + " </TotalTax>");
+		myList.add("<Receipts> " + taxp.getTotalReceiptsGathered() + " </Receipts>");
+		myList.add("<Entertainment> " + taxp.getCategoryNumberOfReceipts("Entertainment") + " </Entertainment>");
+		myList.add("<Basic> " + taxp.getCategoryNumberOfReceipts("Basic") + " </Basic>");
+		myList.add("<Travel> " + taxp.getCategoryNumberOfReceipts("Travel") + " </Travel>");
+		myList.add("<Health> " + taxp.getCategoryNumberOfReceipts("Health") + " </Health>");
+		myList.add("<Other> " + taxp.getCategoryNumberOfReceipts("Other") + " </Other>");
+		
+		try{
+			PrintWriter output = new PrintWriter(file);
+			for(String myString: myList){
+				output.println(myString);
+			}
+			output.close();
+		}catch (IOException ex){
+			System.out.printf("ERROR: %s\n", ex);
+		}
+	}
+	
+	public void createLogTestFile(Taxpayer taxp){
+		ArrayList<String> myList = new ArrayList<String>();
+		String fullPath = domain + taxp.getAfm() + "_LOG.txt";
+		File file = new File(fullPath);
+		
+		myList.add("Name: "  + taxp.getName());
+		myList.add("AFM: " + taxp.getAfm());
+		myList.add("Income: " + taxp.getIncome());
+		myList.add("Basic Tax: " + taxp.getBasicTax());
+		myList.add("Tax Increase: " + taxp.getTaxIncrease());
+		myList.add("Total Tax: " + taxp.getTotalTax());
+		myList.add("Receipts: " + taxp.getTotalReceiptsGathered());
+		myList.add("Entertainment: " + taxp.getCategoryNumberOfReceipts("Entertainment"));
+		myList.add("Basic: " + taxp.getCategoryNumberOfReceipts("Basic"));
+		myList.add("Travel: " + taxp.getCategoryNumberOfReceipts("Travel"));
+		myList.add("Health: " + taxp.getCategoryNumberOfReceipts("Health"));
+		myList.add("Other:" + taxp.getCategoryNumberOfReceipts("Other"));
+		
+		try{
+			PrintWriter output = new PrintWriter(file);
+			for(String myString: myList){
+				output.println(myString);
+			}
+			output.close();
+		}catch (IOException ex){
+			System.out.printf("ERROR: %s\n", ex);
+		}
+	}
+	
+	public void setDomain(String domain){
+		this.domain = domain;
+	}
+}

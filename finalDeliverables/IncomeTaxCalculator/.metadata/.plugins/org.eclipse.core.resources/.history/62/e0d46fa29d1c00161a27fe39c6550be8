@@ -1,0 +1,75 @@
+package inputManager;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class BunchOfDataFromInputXmlFileCreator {
+	public ArrayList<String> createBunchOfDataFromInputFile(
+			String inputFilePath){
+		String line;
+		ArrayList<String> bunchOfDataFromInputFile =
+				new ArrayList<String>();
+		try {
+            FileReader fileReader = new FileReader(inputFilePath);
+            BufferedReader bufferedReader = new BufferedReader(
+            		fileReader);
+            while((line = bufferedReader.readLine()) != null) {
+            	bunchOfDataFromInputFile.add(line);
+            }
+            xmlCleaner(bunchOfDataFromInputFile);
+            bufferedReader.close();
+        }
+        catch(FileNotFoundException ex) {
+            System.out.println("Unable to open file '" +
+        inputFilePath + "'");                
+        }
+        catch(IOException ex) {
+            System.out.println("Error reading file '" +
+        inputFilePath + "'");
+        }
+		return bunchOfDataFromInputFile;
+	}
+	
+	private void xmlCleaner(ArrayList<String> fileDataList){
+		ArrayList<String> trash = new ArrayList<String>();
+		trash.add("");
+		trash.add("<Receipts>");
+		trash.add("</Receipts>");
+		trash.add("<Receipts>  </Receipts>");
+		fileDataList.removeAll(trash);
+		System.out.println(fileDataList);
+		fileDataList.set(0, fileDataList.get(0).replace("<Name>", "").
+				replace("</Name>", "").trim());
+		fileDataList.set(1, fileDataList.get(1).replace("<AFM>", "").
+				replace("</AFM>", "").trim());
+		fileDataList.set(2, fileDataList.get(2).replace("<Status>",
+				"").replace("</Status>", "").trim());
+		fileDataList.set(3, fileDataList.get(3).replace("<Income>",
+				"").replace("</Income>", "").trim());
+		for(int i=4; i<fileDataList.size(); i=i+9){
+			fileDataList.set(i, fileDataList.get(i).replace(
+					"<ReceiptID>","").replace("</ReceiptID>","").
+					trim());
+			fileDataList.set(i+1, fileDataList.get(i+1).replace(
+					"<Date>", "").replace("</Date>", "").trim());
+			fileDataList.set(i+2, fileDataList.get(i+2).replace(
+					"<Kind>", "").replace("</Kind>", "").trim());
+			fileDataList.set(i+3, fileDataList.get(i+3).replace(
+					"<Amount>", "").replace("</Amount>", "").trim());
+			fileDataList.set(i+4, fileDataList.get(i+4).replace(
+					"<Company>", "").replace("</Company>", "").
+					trim());
+			fileDataList.set(i+5, fileDataList.get(i+5).replace(
+					"<Country>", "").replace("</Country>", "").trim());
+			fileDataList.set(i+6, fileDataList.get(i+6).replace(
+					"<City>", "").replace("</City>", "").trim());
+			fileDataList.set(i+7, fileDataList.get(i+7).replace(
+					"<Street>", "").replace("</Street>", "").trim());
+			fileDataList.set(i+8, fileDataList.get(i+8).replace(
+					"<Number>", "").replace("</Number>", "").trim());
+		}
+	}
+}

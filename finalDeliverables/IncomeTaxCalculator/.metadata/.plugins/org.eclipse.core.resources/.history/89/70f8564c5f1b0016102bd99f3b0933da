@@ -1,0 +1,99 @@
+package outputManager;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import taxpayer.Taxpayer;
+
+public class InfoFileUpdater {
+	String domain;
+	
+	public void creatInfoTextFile(Taxpayer taxp){
+		ArrayList<String> myList = new ArrayList<String>();
+		String fullDomain = domain + taxp.getAfm() + "_INFO.txt";
+		File file = new File(fullDomain);
+		//lipi enas elenxos
+		myList.add("Name: " + taxp.getName());
+		myList.add("AFM: " + taxp.getAfm());
+		myList.add("Status: " + taxp.getFamilyStatus());
+		myList.add("Income: " + taxp.getIncome());
+		myList.add("");
+		myList.add("");
+		myList.add("Receipts:");
+		myList.add("");
+		myList.add("");
+		
+		for(int i=0; i<taxp.getReceipts().size(); i++){
+			//System.out.println(taxp.getReceipts().get(i).getReceiptCode());
+			myList.add("Receipt ID: " + taxp.getReceipts().get(i).getReceiptCode());
+			myList.add("Date: " + taxp.getReceipts().get(i).getDateOfIssue());
+			myList.add("Kind: " + taxp.getReceipts().get(i).getCategory());
+			myList.add("Amount: " + taxp.getReceipts().get(i).getAmountPaid());
+			myList.add("Company: " + taxp.getReceipts().get(i).getSeller().getCompanyName());
+			myList.add("Country: " + taxp.getReceipts().get(i).getSeller().getCountry());
+			myList.add("City: " + taxp.getReceipts().get(i).getSeller().getCity());
+			myList.add("Street: " + taxp.getReceipts().get(i).getSeller().getStreet());
+			myList.add("Number: " + taxp.getReceipts().get(i).getSeller().getStreetNumber());
+			myList.add("");
+			myList.add("");
+		}
+		
+		try{
+			PrintWriter output = new PrintWriter(file);
+			for(String myString: myList){
+				//System.out.println(myString);
+				output.println(myString);
+			}
+			output.close();
+		}catch (IOException ex){
+			System.out.printf("ERROR: %s\n", ex);
+		}
+		
+	}
+	
+	public void creatInfoXmlFile(Taxpayer taxp){
+		ArrayList<String> myList = new ArrayList<String>();
+		String fullDomain = domain + taxp.getAfm() + "_INFO.xml";
+		File file = new File(fullDomain);
+		//lipi enas elenxos
+		myList.add("<Name> " + taxp.getName() + " </Name>");
+		myList.add("<AFM> " + taxp.getAfm() + " </AFM>");
+		myList.add("<Status> " + taxp.getFamilyStatus() + " </Status>");
+		myList.add("<Income> " + taxp.getIncome() + " </Income>");
+		myList.add("");
+		myList.add("");
+		myList.add("<Receipts>");
+		myList.add("");
+		myList.add("");
+		
+		for(int i=0; i<taxp.getReceipts().size(); i++){
+			myList.add("<ReceiptID> " + taxp.getReceipts().get(i).getReceiptCode() + " </ReceiptID>");
+			myList.add("<Date> " + taxp.getReceipts().get(i).getDateOfIssue() + " </Date>");
+			myList.add("<Kind> " + taxp.getReceipts().get(i).getCategory() + " </Kind>");
+			myList.add("<Amount> " + taxp.getReceipts().get(i).getAmountPaid() + " </Amount>");
+			myList.add("<Company> " + taxp.getReceipts().get(i).getSeller().getCompanyName() + " </Company>");
+			myList.add("<Country> " + taxp.getReceipts().get(i).getSeller().getCountry() + " </Country>");
+			myList.add("<City> " + taxp.getReceipts().get(i).getSeller().getCity() + " </City>");
+			myList.add("<Street> " + taxp.getReceipts().get(i).getSeller().getStreet() + " </Street>");
+			myList.add("<Number> " + taxp.getReceipts().get(i).getSeller().getStreetNumber() + " </Number>");
+			myList.add("");
+			myList.add("");
+		}
+		myList.add("</Receipts>");
+		
+		try{
+			PrintWriter output = new PrintWriter(file);
+			for(String myString: myList){
+				output.println(myString);
+			}
+			output.close();
+		}catch (IOException ex){
+			System.out.printf("ERROR: %s\n", ex);
+		}
+	}
+	
+	public void setDomain(String domain){
+		this.domain = domain;
+	}
+}

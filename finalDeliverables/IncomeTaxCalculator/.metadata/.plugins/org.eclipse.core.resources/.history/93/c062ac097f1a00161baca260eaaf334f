@@ -1,0 +1,6 @@
+package taxpayer;
+
+public class Test {
+	Taxpayer myTaxpayer = new Taxpayer();
+	
+}

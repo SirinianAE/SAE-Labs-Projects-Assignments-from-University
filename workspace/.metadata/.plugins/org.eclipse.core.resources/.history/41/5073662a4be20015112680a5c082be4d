@@ -1,0 +1,11 @@
+package taxSystem;
+
+
+
+public class Receipt {
+	private int receiptCode;
+	private int dateOfIssue;
+	private String category;
+	private int amountPaid;
+	private Business seller;
+}

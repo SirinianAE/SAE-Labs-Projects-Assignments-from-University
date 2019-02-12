@@ -1,0 +1,223 @@
+package taxpayer;
+
+import java.util.ArrayList;
+
+public class TaxpayerBunchOfData {
+	private ArrayList<Double> percentageForSingleTaxpayer = new ArrayList<Double>();
+	private ArrayList<Double> percentageForMarriedFilingSeparatelyTaxpayer = new ArrayList<Double>();
+	private ArrayList<Double> percentageForMarriedFilingJointlyTaxpayer = new ArrayList<Double>();
+	private ArrayList<Double> percentageForHeadOfHouseholdTaxpayer = new ArrayList<Double>();
+	
+	private ArrayList<Double> borderOfTaxForSingleTaxpayer = new ArrayList<Double>();
+	private ArrayList<Double> borderOfTaxForMarriedFilingSeparatelyTaxpayer = new ArrayList<Double>();
+	private ArrayList<Double> borderOfTaxForMarriedFilingJointlyTaxpayer = new ArrayList<Double>();
+	private ArrayList<Double> borderOfTaxForHeadOfHouseholdTaxpayer = new ArrayList<Double>();
+	
+	private ArrayList<Double> staticTaxForSingleTaxpayer = new ArrayList<Double>();
+	private ArrayList<Double> staticTaxForMarriedFilingSeparatelyTaxpayer = new ArrayList<Double>();
+	private ArrayList<Double> staticTaxForMarriedFilingJointlyTaxpayer = new ArrayList<Double>();
+	private ArrayList<Double> staticTaxForHeadOfHouseholdTaxpayer = new ArrayList<Double>();
+	
+	private ArrayList<Double> borderForTaxIncrease = new ArrayList<Double>();
+	private ArrayList<Double> percentageForTaxIncrease = new ArrayList<Double>();
+	
+	ArrayList<Double> percentage = getPercentage();
+	ArrayList<Double> borderOfTax = getBorderOfTax();
+	ArrayList<Double> staticTax = getStaticTax();
+	
+	private void initializePercentageTax(){
+		initializePercentageForSingleTaxpayer();
+		initializePercentageForMarriedFilingSeparatelyTaxpayer();
+		initializePercentageForMarriedFilingJointlyTaxpayer();
+		initializePercentageForHeadOfHouseholdTaxpayer();
+	}
+	
+	private void initializeBorderOfTax(){
+		initializeBorderOfTaxForSingleTaxpayer();
+		initializeBorderOfTaxForMarriedFilingSeparatelyTaxpayer();
+		initializeBorderOfTaxForMarriedFilingJointlyTaxpayer();
+		initializeBorderOfTaxForHeadOfHouseholdTaxpayer();
+	}
+	
+	private void initializeStaticTax(){
+		initializeStaticTaxForSingleTaxpayer();
+		initializeStaticTaxForMarriedFilingSeparatelyTaxpayer();
+		initializeStaticTaxForMarriedFilingJointlyTaxpayer();
+		initializeStaticTaxForHeadOfHouseholdTaxpayer();
+	}
+	
+	private void initializeBorderForTaxIncrease(){
+		borderForTaxIncrease.add(0.0);
+		borderForTaxIncrease.add(20.0);
+		borderForTaxIncrease.add(40.0);
+		borderForTaxIncrease.add(60.0);
+		borderForTaxIncrease.add(Double.MAX_VALUE);
+	}
+	
+	private void initializePercentageForTaxIncrease(){
+		percentageForTaxIncrease.add(8.0);
+		percentageForTaxIncrease.add(4.0);
+		percentageForTaxIncrease.add(-15.0);
+		percentageForTaxIncrease.add(-30.0);
+	}
+	
+	private void initializePercentageForSingleTaxpayer(){
+		percentageForSingleTaxpayer.add(5.35);
+		percentageForSingleTaxpayer.add(7.05);
+		percentageForSingleTaxpayer.add(7.85);
+		percentageForSingleTaxpayer.add(7.85);
+		percentageForSingleTaxpayer.add(9.85);
+	}
+	
+	private void initializePercentageForMarriedFilingSeparatelyTaxpayer(){
+		percentageForMarriedFilingSeparatelyTaxpayer.add(5.35);
+		percentageForMarriedFilingSeparatelyTaxpayer.add(7.05);
+		percentageForMarriedFilingSeparatelyTaxpayer.add(7.85);
+		percentageForMarriedFilingSeparatelyTaxpayer.add(7.85);
+		percentageForMarriedFilingSeparatelyTaxpayer.add(9.85);
+	}
+	
+	private void initializePercentageForMarriedFilingJointlyTaxpayer(){
+		percentageForMarriedFilingJointlyTaxpayer.add(5.35);
+		percentageForMarriedFilingJointlyTaxpayer.add(7.05);
+		percentageForMarriedFilingJointlyTaxpayer.add(7.05);
+		percentageForMarriedFilingJointlyTaxpayer.add(7.85);
+		percentageForMarriedFilingJointlyTaxpayer.add(9.85);
+	}
+	
+	private void initializePercentageForHeadOfHouseholdTaxpayer(){
+		percentageForHeadOfHouseholdTaxpayer.add(5.35);
+		percentageForHeadOfHouseholdTaxpayer.add(7.05);
+		percentageForHeadOfHouseholdTaxpayer.add(7.05);
+		percentageForHeadOfHouseholdTaxpayer.add(7.85);
+		percentageForHeadOfHouseholdTaxpayer.add(9.85);
+	}
+	
+	private void initializeBorderOfTaxForSingleTaxpayer(){
+		borderOfTaxForSingleTaxpayer.add(0.0);
+		borderOfTaxForSingleTaxpayer.add(24680.0);
+		borderOfTaxForSingleTaxpayer.add(81080.0);
+		borderOfTaxForSingleTaxpayer.add(90000.0);
+		borderOfTaxForSingleTaxpayer.add(152540.0);
+		borderOfTaxForSingleTaxpayer.add(Double.MAX_VALUE);
+	}
+	
+	private void initializeBorderOfTaxForMarriedFilingSeparatelyTaxpayer(){
+		borderOfTaxForMarriedFilingSeparatelyTaxpayer.add(0.0);
+		borderOfTaxForMarriedFilingSeparatelyTaxpayer.add(18040.0);
+		borderOfTaxForMarriedFilingSeparatelyTaxpayer.add(71680.0);
+		borderOfTaxForMarriedFilingSeparatelyTaxpayer.add(90000.0);
+		borderOfTaxForMarriedFilingSeparatelyTaxpayer.add(127120.0);
+		borderOfTaxForMarriedFilingSeparatelyTaxpayer.add(Double.MAX_VALUE);
+	}
+	
+	private void initializeBorderOfTaxForMarriedFilingJointlyTaxpayer(){
+		borderOfTaxForMarriedFilingJointlyTaxpayer.add(0.0);
+		borderOfTaxForMarriedFilingJointlyTaxpayer.add(36080.0);
+		borderOfTaxForMarriedFilingJointlyTaxpayer.add(90000.0);
+		borderOfTaxForMarriedFilingJointlyTaxpayer.add(143350.0);
+		borderOfTaxForMarriedFilingJointlyTaxpayer.add(254240.0);
+		borderOfTaxForMarriedFilingJointlyTaxpayer.add(Double.MAX_VALUE);
+	}
+	
+	private void initializeBorderOfTaxForHeadOfHouseholdTaxpayer(){
+		borderOfTaxForHeadOfHouseholdTaxpayer.add(0.0);
+		borderOfTaxForHeadOfHouseholdTaxpayer.add(30390.0);
+		borderOfTaxForHeadOfHouseholdTaxpayer.add(90000.0);
+		borderOfTaxForHeadOfHouseholdTaxpayer.add(122110.0);
+		borderOfTaxForHeadOfHouseholdTaxpayer.add(203390.0);
+		borderOfTaxForHeadOfHouseholdTaxpayer.add(Double.MAX_VALUE);
+	}
+	
+	private void initializeStaticTaxForSingleTaxpayer(){
+		staticTaxForSingleTaxpayer.add(0.0);
+		staticTaxForSingleTaxpayer.add(1320.38);
+		staticTaxForSingleTaxpayer.add(5296.58);
+		staticTaxForSingleTaxpayer.add(5996.80);
+		staticTaxForSingleTaxpayer.add(10906.19);
+	}
+	
+	private void initializeStaticTaxForMarriedFilingSeparatelyTaxpayer(){
+		staticTaxForMarriedFilingSeparatelyTaxpayer.add(0.0);
+		staticTaxForMarriedFilingSeparatelyTaxpayer.add(965.14);
+		staticTaxForMarriedFilingSeparatelyTaxpayer.add(4746.76);
+		staticTaxForMarriedFilingSeparatelyTaxpayer.add(6184.88);
+		staticTaxForMarriedFilingSeparatelyTaxpayer.add(9098.80);
+	}
+	
+	private void initializeStaticTaxForMarriedFilingJointlyTaxpayer(){
+		staticTaxForMarriedFilingJointlyTaxpayer.add(0.0);
+		staticTaxForMarriedFilingJointlyTaxpayer.add(1930.28);
+		staticTaxForMarriedFilingJointlyTaxpayer.add(5731.64);
+		staticTaxForMarriedFilingJointlyTaxpayer.add(9492.82);
+		staticTaxForMarriedFilingJointlyTaxpayer.add(18197.69);
+	}
+	
+	private void initializeStaticTaxForHeadOfHouseholdTaxpayer(){
+		staticTaxForHeadOfHouseholdTaxpayer.add(0.0);
+		staticTaxForHeadOfHouseholdTaxpayer.add(1625.87);
+		staticTaxForHeadOfHouseholdTaxpayer.add(5828.38);
+		staticTaxForHeadOfHouseholdTaxpayer.add(8092.13);
+		staticTaxForHeadOfHouseholdTaxpayer.add(14472.61);
+	}
+	
+	private ArrayList<Double> getPercentage(){
+		if (familyStatus.equals("Married Filing Jointly")){
+			return percentageForMarriedFilingJointlyTaxpayer;
+		}
+		else if(familyStatus.equals("Married Filing Separately")){
+			return percentageForMarriedFilingSeparatelyTaxpayer;
+		}
+		else if(familyStatus.equals("Single")){
+			return percentageForSingleTaxpayer;
+		}
+		else if(familyStatus.equals("Head Of Household")){
+			return percentageForHeadOfHouseholdTaxpayer;
+		}
+		else{
+			System.out.println("Can't find suck taxpayer type!");
+			System.exit(-1);
+			return percentageForMarriedFilingSeparatelyTaxpayer;
+		}
+	}
+	
+	private ArrayList<Double> getBorderOfTax(){
+		if (familyStatus.equals("Married Filing Jointly")){
+			return borderOfTaxForMarriedFilingJointlyTaxpayer;
+		}
+		else if(familyStatus.equals("Married Filing Separately")){
+			return borderOfTaxForMarriedFilingSeparatelyTaxpayer;
+		}
+		else if(familyStatus.equals("Single")){
+			return borderOfTaxForSingleTaxpayer;
+		}
+		else if(familyStatus.equals("Head Of Household")){
+			return borderOfTaxForHeadOfHouseholdTaxpayer;
+		}
+		else{
+			System.out.println("Can't find suck taxpayer type!");
+			System.exit(-1);
+			return percentageForMarriedFilingSeparatelyTaxpayer;
+		}
+	}
+	
+	private ArrayList<Double> getStaticTax(){
+		if (familyStatus.equals("Married Filing Jointly")){
+			return staticTaxForMarriedFilingJointlyTaxpayer;
+		}
+		else if(familyStatus.equals("Married Filing Separately")){
+			return staticTaxForMarriedFilingSeparatelyTaxpayer;
+		}
+		else if(familyStatus.equals("Single")){
+			return percentageForSingleTaxpayer;
+		}
+		else if(familyStatus.equals("Head Of Household")){
+			return staticTaxForHeadOfHouseholdTaxpayer;
+		}
+		else{
+			System.out.println("Can't find suck taxpayer type!");
+			System.exit(-1);
+			return percentageForMarriedFilingSeparatelyTaxpayer;
+		}
+	}
+}

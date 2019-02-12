@@ -1,0 +1,5 @@
+package outputManager;
+
+public class InfoFileUpdater {
+
+}

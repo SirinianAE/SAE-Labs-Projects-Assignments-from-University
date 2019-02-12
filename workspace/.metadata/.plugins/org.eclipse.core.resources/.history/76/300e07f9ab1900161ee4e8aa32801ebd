@@ -1,0 +1,55 @@
+package outputManager;
+
+import taxpayer.Taxpayer;
+
+public class OutputManager {
+	private String domain;
+	private Taxpayer outputManagerTaxpayer;
+	private InfoFileUpdater myInfoFileUpdater;
+	private LogFileCreator myLogFileCreator;
+	private ChartCreator myChartCreator;
+	
+	public OutputManager(String domain, Taxpayer outputManagerTaxpayer){
+		this.domain = domain;
+		this.outputManagerTaxpayer = outputManagerTaxpayer;
+		updateDomain();
+	}
+	
+	private void updateDomain(){
+		myInfoFileUpdater = new InfoFileUpdater(domain, outputManagerTaxpayer);
+		myLogFileCreator = new LogFileCreator(domain, outputManagerTaxpayer);
+		myChartCreator = new ChartCreator(outputManagerTaxpayer);
+	}
+	
+	public void updateOutputManagerTaxpayer(
+			Taxpayer outputManagerTaxpayer){
+		this.outputManagerTaxpayer = outputManagerTaxpayer;
+		myChartCreator.setOutputManagerTaxpayer(
+				outputManagerTaxpayer);
+		outputManagerTaxpayer.getTaxpayerInformationString();
+	}
+	
+	public void createInfoTextFile(){
+		myInfoFileUpdater.createInfoTextFile();
+	}
+	
+	public void createInfoXmlFile(){
+		myInfoFileUpdater.createInfoXmlFile();
+	}
+	
+	public void createLogTextFile(){
+		myLogFileCreator.createLogTextFile();
+	}
+	
+	public void createLogXmlFile(){
+		myLogFileCreator.createLogXmlFile();
+	}
+	
+	public void createBarChart(){
+		myChartCreator.createBarChart();
+	}
+	
+	public void createPieChart(){
+		myChartCreator.createPieChart();
+	}
+}
