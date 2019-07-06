@@ -1,0 +1,26 @@
+--erwtisi 3 lab1_1.c
+
+cse32537@hp6200ws07:/media/cse32537/MULTIBOOT1/lab1$ /usr/bin/ns lab1_1.tcl
+cbr0 produces 20.0 packets per second
+cbr0 produces 6000.0 bytes per second
+running nam...
+
+--erwtisi 3 lab1_3.c
+
+cse32537@hp6200ws07:/media/cse32537/MULTIBOOT1/lab1$ /usr/bin/ns lab1_3.tcl
+cbr0 produces 20.0 packets per second
+cbr0 produces 6000.0 bytes per second
+
+
+--erwtisi 4 lab1_1.c
+
+cse32537@hp6200ws07:/media/cse32537/MULTIBOOT1/lab1$ /usr/bin/ns lab1_1.tcl
+cbr0 produces 20.0 packets per second
+cbr0 produces 6000.0 bytes per second
+running nam...
+
+--erwtisi 4 lab1_3.c
+
+cse32537@hp6200ws07:/media/cse32537/MULTIBOOT1/lab1$ /usr/bin/ns lab1_3.tcl
+cbr0 produces 20.0 packets per second
+cbr0 produces 6000.0 bytes per second

@@ -1,0 +1,303 @@
+(default)-----------------------------------------------------------------------------------------
+
+cse32537@hp6000ws23:/media/cse32537/MULTIBOOT/lab5/sclab5$ sh sat-aloha.sh
+Generated Packets		: 2970
+Serviced Packets		: 2962
+Collisions			: 124
+Dropped				: 0
+Mean numb. of Collisions	: 0.0417508
+% of successful delivery	: 0.997306
+Mean delay (msec)		: 334.18
+
+
+cse32537@hp6000ws23:/media/cse32537/MULTIBOOT/lab5/sclab5$ sh experiment.sh
+Iteration 1...
+Iteration 2...
+Iteration 3...
+Iteration 4...
+Iteration 5...
+Generated Packets:
+	Mean =		2863.000000
+	Std. Dev. =	118.194755
+	Conf. Int. =	103.602270
+Serviced Packets:
+	Mean =		2850.200000
+	Std. Dev. =	119.162494
+	Conf. Int. =	104.450531
+Collisions:
+	Mean =		131.600000
+	Std. Dev. =	10.114346
+	Conf. Int. =	8.865615
+Dropped:
+	Mean =		0.000000
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Mean numb. of Collisions:
+	Mean =		0.046026
+	Std. Dev. =	0.004064
+	Conf. Int. =	0.003562
+% of successful delivery:
+	Mean =		0.995512
+	Std. Dev. =	0.001842
+	Conf. Int. =	0.001615
+Mean delay (msec):
+	Mean =		342.294800
+	Std. Dev. =	19.288143
+	Conf. Int. =	16.906803
+
+(5 1o πείραμα)-----------------------------------------------------------------------------------------
+
+	(mean_backoff_ 1s)-----------------------------------------------------------------------------
+		cse32537@hp6000ws23:/media/cse32537/MULTIBOOT/lab5/sclab5$ sh experiment.sh
+		Iteration 1...
+		Iteration 2...
+		Iteration 3...
+		Iteration 4...
+		Iteration 5...
+		Generated Packets:
+			Mean =		2833.000000
+			Std. Dev. =	83.839132
+			Conf. Int. =	73.488239
+		Serviced Packets:
+			Mean =		2823.400000
+			Std. Dev. =	87.885152
+			Conf. Int. =	77.034733
+		Collisions:
+			Mean =		147.800000
+			Std. Dev. =	16.769019
+			Conf. Int. =	14.698693
+		Dropped:
+			Mean =		0.000000
+			Std. Dev. =	0.000000
+			Conf. Int. =	0.000000
+		Mean numb. of Collisions:
+			Mean =		0.052081
+			Std. Dev. =	0.004685
+			Conf. Int. =	0.004107
+		% of successful delivery:
+			Mean =		0.996575
+			Std. Dev. =	0.001891
+			Conf. Int. =	0.001657
+		Mean delay (msec):
+			Mean =		364.554800
+			Std. Dev. =	8.256179
+			Conf. Int. =	7.236860
+
+	(mean_backoff_ 3s)-----------------------------------------------------------------------------
+		cse32537@hp6000ws23:/media/cse32537/MULTIBOOT/lab5/sclab5$ sh experiment.sh
+		Iteration 1...
+		Iteration 2...
+		Iteration 3...
+		Iteration 4...
+		Iteration 5...
+		Generated Packets:
+			Mean =		2834.800000
+			Std. Dev. =	47.134913
+			Conf. Int. =	41.315573
+		Serviced Packets:
+			Mean =		2810.600000
+			Std. Dev. =	37.367098
+			Conf. Int. =	32.753705
+		Collisions:
+			Mean =		120.600000
+			Std. Dev. =	13.575714
+			Conf. Int. =	11.899638
+		Dropped:
+			Mean =		4.000000
+			Std. Dev. =	5.147815
+			Conf. Int. =	4.512259
+		Mean numb. of Collisions:
+			Mean =		0.042504
+			Std. Dev. =	0.004251
+			Conf. Int. =	0.003726
+		% of successful delivery:
+			Mean =		0.991511
+			Std. Dev. =	0.004633
+			Conf. Int. =	0.004061
+		Mean delay (msec):
+			Mean =		660.689000
+			Std. Dev. =	109.706118
+			Conf. Int. =	96.161652
+
+	(mean_backoff_ 6.5s)---------------------------------------------------------------------------
+		cse32537@hp6000ws23:/media/cse32537/MULTIBOOT/lab5/sclab5$ sh experiment.sh
+		Iteration 1...
+		Iteration 2...
+		Iteration 3...
+		Iteration 4...
+		Iteration 5...
+		Generated Packets:
+			Mean =		2838.400000
+			Std. Dev. =	36.855122
+			Conf. Int. =	32.304939
+		Serviced Packets:
+			Mean =		2723.600000
+			Std. Dev. =	57.037707
+			Conf. Int. =	49.995754
+		Collisions:
+			Mean =		133.000000
+			Std. Dev. =	19.196354
+			Conf. Int. =	16.826346
+		Dropped:
+			Mean =		56.800000
+			Std. Dev. =	24.903815
+			Conf. Int. =	21.829156
+		Mean numb. of Collisions:
+			Mean =		0.046853
+			Std. Dev. =	0.006733
+			Conf. Int. =	0.005902
+		% of successful delivery:
+			Mean =		0.959483
+			Std. Dev. =	0.008709
+			Conf. Int. =	0.007634
+		Mean delay (msec):
+			Mean =		1431.964000
+			Std. Dev. =	311.782598
+			Conf. Int. =	273.289497
+
+	(mean_backoff_ 15.5s)--------------------------------------------------------------------------
+		cse32537@hp6000ws23:/media/cse32537/MULTIBOOT/lab5/sclab5$ sh experiment.sh
+		Iteration 1...
+		Iteration 2...
+		Iteration 3...
+		Iteration 4...
+		Iteration 5...
+		Generated Packets:
+			Mean =		2815.200000
+			Std. Dev. =	47.856034
+			Conf. Int. =	41.947663
+		Serviced Packets:
+			Mean =		2462.400000
+			Std. Dev. =	20.044949
+			Conf. Int. =	17.570173
+		Collisions:
+			Mean =		98.600000
+			Std. Dev. =	16.288032
+			Conf. Int. =	14.277090
+		Dropped:
+			Mean =		221.400000
+			Std. Dev. =	53.125324
+			Conf. Int. =	46.566399
+		Mean numb. of Collisions:
+			Mean =		0.034977
+			Std. Dev. =	0.005345
+			Conf. Int. =	0.004685
+		% of successful delivery:
+			Mean =		0.874848
+			Std. Dev. =	0.013991
+			Conf. Int. =	0.012264
+		Mean delay (msec):
+			Mean =		2467.892000
+			Std. Dev. =	401.750651
+			Conf. Int. =	352.149973
+
+(5 2o πείραμα)-----------------------------------------------------------------------------------------
+
+	(rtx_limit_ 1)---------------------------------------------------------------------------------
+		cse32537@hp6000ws23:/media/cse32537/MULTIBOOT/lab5/sclab5$ sh experiment.sh
+		Iteration 1...
+		Iteration 2...
+		Iteration 3...
+		Iteration 4...
+		Iteration 5...
+		Generated Packets:
+			Mean =		2888.600000
+			Std. Dev. =	37.746523
+			Conf. Int. =	33.086286
+		Serviced Packets:
+			Mean =		2871.400000
+			Std. Dev. =	32.516150
+			Conf. Int. =	28.501662
+		Collisions:
+			Mean =		136.400000
+			Std. Dev. =	26.959228
+			Conf. Int. =	23.630806
+		Dropped:
+			Mean =		8.600000
+			Std. Dev. =	3.646917
+			Conf. Int. =	3.196663
+		Mean numb. of Collisions:
+			Mean =		0.047143
+			Std. Dev. =	0.008809
+			Conf. Int. =	0.007721
+		% of successful delivery:
+			Mean =		0.994064
+			Std. Dev. =	0.002005
+			Conf. Int. =	0.001758
+		Mean delay (msec):
+			Mean =		337.961600
+			Std. Dev. =	10.354007
+			Conf. Int. =	9.075687
+
+	(rtx_limit_ 2)---------------------------------------------------------------------------------
+		cse32537@hp6000ws23:/media/cse32537/MULTIBOOT/lab5/sclab5$ sh experiment.sh
+		Iteration 1...
+		Iteration 2...
+		Iteration 3...
+		Iteration 4...
+		Iteration 5...
+		Generated Packets:
+			Mean =		2858.800000
+			Std. Dev. =	34.615026
+			Conf. Int. =	30.341408
+		Serviced Packets:
+			Mean =		2845.600000
+			Std. Dev. =	37.560618
+			Conf. Int. =	32.923333
+		Collisions:
+			Mean =		123.000000
+			Std. Dev. =	12.165525
+			Conf. Int. =	10.663553
+		Dropped:
+			Mean =		0.600000
+			Std. Dev. =	0.547723
+			Conf. Int. =	0.480100
+		Mean numb. of Collisions:
+			Mean =		0.043032
+			Std. Dev. =	0.004300
+			Conf. Int. =	0.003769
+		% of successful delivery:
+			Mean =		0.995374
+			Std. Dev. =	0.002260
+			Conf. Int. =	0.001981
+		Mean delay (msec):
+			Mean =		350.840000
+			Std. Dev. =	27.057800
+			Conf. Int. =	23.717207
+
+	(rtx_limit_ 6)---------------------------------------------------------------------------------
+		cse32537@hp6000ws23:/media/cse32537/MULTIBOOT/lab5/sclab5$ sh experiment.sh
+		Iteration 1...
+		Iteration 2...
+		Iteration 3...
+		Iteration 4...
+		Iteration 5...
+		Generated Packets:
+			Mean =		2872.600000
+			Std. Dev. =	65.937850
+			Conf. Int. =	57.797073
+		Serviced Packets:
+			Mean =		2860.200000
+			Std. Dev. =	72.888271
+			Conf. Int. =	63.889386
+		Collisions:
+			Mean =		124.000000
+			Std. Dev. =	7.483315
+			Conf. Int. =	6.559415
+		Dropped:
+			Mean =		0.000000
+			Std. Dev. =	0.000000
+			Conf. Int. =	0.000000
+		Mean numb. of Collisions:
+			Mean =		0.043159
+			Std. Dev. =	0.002248
+			Conf. Int. =	0.001971
+		% of successful delivery:
+			Mean =		0.995637
+			Std. Dev. =	0.002886
+			Conf. Int. =	0.002529
+		Mean delay (msec):
+			Mean =		334.691600
+			Std. Dev. =	11.100520
+			Conf. Int. =	9.730035
+

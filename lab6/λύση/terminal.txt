@@ -1,0 +1,354 @@
+--(all default)
+
+cse32537@hp6000ws23:~/Desktop/lab6/sclab6$ ns lan-csma.tcl -donam
+warning: no class variable LanRouter::debug_
+
+	see tcl-object.tcl in tclcl for info about this warning.
+
+
+
+cse32537@hp6000ws23:~/Desktop/lab6/sclab6$ sh lan-csma.sh
+Generated Packets		: 14250
+Packets transmitted 		: 14250
+Serviced Packets			: 14247
+Collisions			: 33028
+Dropped				: 0
+Mean numb. of Collisions		: 2.31775
+Delivery Ratio (%)		: 0.999789
+Mean packet delay (msec)	: 2.41593
+
+
+
+cse32537@hp6000ws23:~/Desktop/lab6/sclab6$ sh experiment.sh
+Iteration 1...
+Iteration 2...
+Iteration 3...
+Iteration 4...
+Iteration 5...
+Iteration 6...
+Iteration 7...
+Iteration 8...
+Iteration 9...
+Iteration 10...
+Generated Packets:
+	Mean =		14250.000000
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Packets transmitted:
+	Mean =		14250.000000
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Serviced Packets:
+	Mean =		14247.000000
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Collisions:
+	Mean =		33138.700000
+	Std. Dev. =	120.436290
+	Conf. Int. =	74.647186
+Dropped:
+	Mean =		0.000000
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Mean numb. of Collisions:
+	Mean =		2.325523
+	Std. Dev. =	0.008451
+	Conf. Int. =	0.005238
+Delivery Ratio (%):
+	Mean =		0.999789
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Mean packet delay (msec):
+	Mean =		2.517589
+	Std. Dev. =	0.002523
+	Conf. Int. =	0.001564
+
+
+--(1o πείραμα)
+--	(packetSize == 210)
+
+
+cse32537@hp6000ws23:~/Desktop/lab6/sclab6$ sh experiment.sh
+Iteration 1...
+Iteration 2...
+Iteration 3...
+Iteration 4...
+Iteration 5...
+Iteration 6...
+Iteration 7...
+Iteration 8...
+Iteration 9...
+Iteration 10...
+Generated Packets:
+	Mean =		14250.000000
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Packets transmitted:
+	Mean =		14250.000000
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Serviced Packets:
+	Mean =		14247.000000
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Collisions:
+	Mean =		33026.800000
+	Std. Dev. =	76.056704
+	Conf. Int. =	47.140434
+Dropped:
+	Mean =		0.000000
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Mean numb. of Collisions:
+	Mean =		2.317670
+	Std. Dev. =	0.005336
+	Conf. Int. =	0.003308
+Delivery Ratio (%):
+	Mean =		0.999789
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Mean packet delay (msec):
+	Mean =		2.532344
+	Std. Dev. =	0.003478
+	Conf. Int. =	0.002156
+
+
+--	(packetSize == 600)
+
+cse32537@hp6000ws23:~/Desktop/lab6/sclab6$ sh experiment.sh
+Iteration 1...
+Iteration 2...
+Iteration 3...
+Iteration 4...
+Iteration 5...
+Iteration 6...
+Iteration 7...
+Iteration 8...
+Iteration 9...
+Iteration 10...
+Generated Packets:
+	Mean =		14250.000000
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Packets transmitted:
+	Mean =		14154.200000
+	Std. Dev. =	91.986472
+	Conf. Int. =	57.013806
+Serviced Packets:
+	Mean =		14151.000000
+	Std. Dev. =	91.932342
+	Conf. Int. =	56.980256
+Collisions:
+	Mean =		26820.200000
+	Std. Dev. =	5385.580270
+	Conf. Int. =	3338.017234
+Dropped:
+	Mean =		82.700000
+	Std. Dev. =	83.608944
+	Conf. Int. =	51.821361
+Mean numb. of Collisions:
+	Mean =		1.892775
+	Std. Dev. =	0.369637
+	Conf. Int. =	0.229104
+Delivery Ratio (%):
+	Mean =		0.993053
+	Std. Dev. =	0.006451
+	Conf. Int. =	0.003999
+Mean packet delay (msec):
+	Mean =		10.521647
+	Std. Dev. =	6.215655
+	Conf. Int. =	3.852503
+
+
+--	(packetSize == 1000)
+
+cse32537@hp6000ws23:~/Desktop/lab6/sclab6$ sh experiment.sh
+Iteration 1...
+Iteration 2...
+Iteration 3...
+Iteration 4...
+Iteration 5...
+Iteration 6...
+Iteration 7...
+Iteration 8...
+Iteration 9...
+Iteration 10...
+Generated Packets:
+	Mean =		14250.000000
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Packets transmitted:
+	Mean =		10716.300000
+	Std. Dev. =	60.216369
+	Conf. Int. =	37.322492
+Serviced Packets:
+	Mean =		10676.400000
+	Std. Dev. =	60.386165
+	Conf. Int. =	37.427733
+Collisions:
+	Mean =		4612.200000
+	Std. Dev. =	194.427250
+	Conf. Int. =	120.507258
+Dropped:
+	Mean =		3444.400000
+	Std. Dev. =	59.822330
+	Conf. Int. =	37.078264
+Mean numb. of Collisions:
+	Mean =		0.430378
+	Std. Dev. =	0.017592
+	Conf. Int. =	0.010904
+Delivery Ratio (%):
+	Mean =		0.749221
+	Std. Dev. =	0.004238
+	Conf. Int. =	0.002626
+Mean packet delay (msec):
+	Mean =		79.288150
+	Std. Dev. =	0.899022
+	Conf. Int. =	0.557220
+
+
+--(2o πείραμα)
+
+--	(interval == 0.004, packetSize == 200)
+
+cse32537@hp6000ws23:~/Desktop/lab6/sclab6$ sh experiment.sh
+Iteration 1...
+Iteration 2...
+Iteration 3...
+Iteration 4...
+Iteration 5...
+Iteration 6...
+Iteration 7...
+Iteration 8...
+Iteration 9...
+Iteration 10...
+Generated Packets:
+	Mean =		7128.000000
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Packets transmitted:
+	Mean =		7125.000000
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Serviced Packets:
+	Mean =		7125.000000
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Collisions:
+	Mean =		16585.400000
+	Std. Dev. =	58.746537
+	Conf. Int. =	36.411481
+Dropped:
+	Mean =		0.000000
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Mean numb. of Collisions:
+	Mean =		2.327776
+	Std. Dev. =	0.008246
+	Conf. Int. =	0.005111
+Delivery Ratio (%):
+	Mean =		0.999579
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Mean packet delay (msec):
+	Mean =		2.512607
+	Std. Dev. =	0.002188
+	Conf. Int. =	0.001356
+
+
+--	(interval == 0.001, packetSize == 200)
+
+cse32537@hp6000ws23:~/Desktop/lab6/sclab6$ sh experiment.sh
+Iteration 1...
+Iteration 2...
+Iteration 3...
+Iteration 4...
+Iteration 5...
+Iteration 6...
+Iteration 7...
+Iteration 8...
+Iteration 9...
+Iteration 10...
+Generated Packets:
+	Mean =		28503.000000
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Packets transmitted:
+	Mean =		28486.200000
+	Std. Dev. =	22.996618
+	Conf. Int. =	14.253452
+Serviced Packets:
+	Mean =		28480.400000
+	Std. Dev. =	23.075721
+	Conf. Int. =	14.302480
+Collisions:
+	Mean =		62032.600000
+	Std. Dev. =	988.026450
+	Conf. Int. =	612.385138
+Dropped:
+	Mean =		12.500000
+	Std. Dev. =	23.519495
+	Conf. Int. =	14.577534
+Mean numb. of Collisions:
+	Mean =		2.177622
+	Std. Dev. =	0.033482
+	Conf. Int. =	0.020752
+Delivery Ratio (%):
+	Mean =		0.999207
+	Std. Dev. =	0.000809
+	Conf. Int. =	0.000502
+Mean packet delay (msec):
+	Mean =		2.852344
+	Std. Dev. =	0.236428
+	Conf. Int. =	0.146540
+
+
+
+--	(interval == 0.0006, packetSize == 200)
+
+cse32537@hp6000ws23:~/Desktop/lab6/sclab6$ sh experiment.sh
+Iteration 1...
+Iteration 2...
+Iteration 3...
+Iteration 4...
+Iteration 5...
+Iteration 6...
+Iteration 7...
+Iteration 8...
+Iteration 9...
+Iteration 10...
+Generated Packets:
+	Mean =		47502.000000
+	Std. Dev. =	0.000000
+	Conf. Int. =	0.000000
+Packets transmitted:
+	Mean =		38097.100000
+	Std. Dev. =	179.651793
+	Conf. Int. =	111.349335
+Serviced Packets:
+	Mean =		38090.500000
+	Std. Dev. =	179.221929
+	Conf. Int. =	111.082903
+Collisions:
+	Mean =		29527.700000
+	Std. Dev. =	749.248965
+	Conf. Int. =	464.389320
+Dropped:
+	Mean =		9342.700000
+	Std. Dev. =	177.601333
+	Conf. Int. =	110.078446
+Mean numb. of Collisions:
+	Mean =		0.775083
+	Std. Dev. =	0.020206
+	Conf. Int. =	0.012524
+Delivery Ratio (%):
+	Mean =		0.801872
+	Std. Dev. =	0.003773
+	Conf. Int. =	0.002338
+Mean packet delay (msec):
+	Mean =		16.751590
+	Std. Dev. =	0.209183
+	Conf. Int. =	0.129653
+
+
+

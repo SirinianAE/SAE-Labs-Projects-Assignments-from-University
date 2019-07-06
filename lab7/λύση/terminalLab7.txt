@@ -1,0 +1,888 @@
+--(1o πείραμα)
+--	(Go-Back-N, window_size == 2)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 0 -wsize 2 -er 0.1 -tr_speed 10000000 -location 3
+Go-Back-N mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		53.400000
+	Std. Dev. =	5.128353
+	Conf. Int. =	4.495199
+Received packets:
+	Mean =		51.800000
+	Std. Dev. =	4.969909
+	Conf. Int. =	4.356318
+Mean number of transm/packet:
+	Mean =		1.260144
+	Std. Dev. =	0.079002
+	Conf. Int. =	0.069248
+Mean number of errors:
+	Mean =		0.123561
+	Std. Dev. =	0.038027
+	Conf. Int. =	0.033332
+Mean delay (secs):
+	Mean =		0.236660
+	Std. Dev. =	0.025627
+	Conf. Int. =	0.022463
+Throughput (Mbps):
+	Mean =		0.044340
+	Std. Dev. =	0.003501
+	Conf. Int. =	0.003069
+
+
+--	(Go-Back-N, window_size == 11)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 0 -wsize 11 -er 0.1 -tr_speed 10000000 -location 3
+Go-Back-N mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		224.800000
+	Std. Dev. =	14.078352
+	Conf. Int. =	12.340220
+Received packets:
+	Mean =		215.800000
+	Std. Dev. =	15.912259
+	Conf. Int. =	13.947710
+Mean number of transm/packet:
+	Mean =		2.022598
+	Std. Dev. =	0.136967
+	Conf. Int. =	0.120057
+Mean number of errors:
+	Mean =		0.105931
+	Std. Dev. =	0.011341
+	Conf. Int. =	0.009940
+Mean delay (secs):
+	Mean =		0.352518
+	Std. Dev. =	0.037278
+	Conf. Int. =	0.032675
+Throughput (Mbps):
+	Mean =		0.183374
+	Std. Dev. =	0.013014
+	Conf. Int. =	0.011408
+
+
+--	(Go-Back-N, window_size == 51)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 0 -wsize 51 -er 0.1 -tr_speed 10000000 -location 3
+Go-Back-N mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		383.400000
+	Std. Dev. =	76.692894
+	Conf. Int. =	67.224286
+Received packets:
+	Mean =		340.400000
+	Std. Dev. =	69.593822
+	Conf. Int. =	61.001674
+Mean number of transm/packet:
+	Mean =		5.321846
+	Std. Dev. =	0.935637
+	Conf. Int. =	0.820122
+Mean number of errors:
+	Mean =		0.106153
+	Std. Dev. =	0.007338
+	Conf. Int. =	0.006432
+Mean delay (secs):
+	Mean =		1.253816
+	Std. Dev. =	0.374763
+	Conf. Int. =	0.328494
+Throughput (Mbps):
+	Mean =		0.290222
+	Std. Dev. =	0.059037
+	Conf. Int. =	0.051748
+
+
+--	(Go-Back-N, window_size == 152)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 0 -wsize 152 -er 0.1 -tr_speed 10000000 -location 3
+Go-Back-N mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		485.800000
+	Std. Dev. =	60.709966
+	Conf. Int. =	53.214632
+Received packets:
+	Mean =		336.400000
+	Std. Dev. =	59.087224
+	Conf. Int. =	51.792235
+Mean number of transm/packet:
+	Mean =		10.788286
+	Std. Dev. =	1.079863
+	Conf. Int. =	0.946542
+Mean number of errors:
+	Mean =		0.099700
+	Std. Dev. =	0.004014
+	Conf. Int. =	0.003518
+Mean delay (secs):
+	Mean =		3.247760
+	Std. Dev. =	0.460832
+	Conf. Int. =	0.403937
+Throughput (Mbps):
+	Mean =		0.287293
+	Std. Dev. =	0.045896
+	Conf. Int. =	0.040230
+
+
+--	(Go-Back-N, window_size == 510)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 0 -wsize 510 -er 0.1 -tr_speed 10000000 -location 3
+Go-Back-N mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		744.400000
+	Std. Dev. =	65.774615
+	Conf. Int. =	57.653992
+Received packets:
+	Mean =		236.600000
+	Std. Dev. =	64.666838
+	Conf. Int. =	56.682983
+Mean number of transm/packet:
+	Mean =		15.475860
+	Std. Dev. =	1.413915
+	Conf. Int. =	1.239351
+Mean number of errors:
+	Mean =		0.100014
+	Std. Dev. =	0.002573
+	Conf. Int. =	0.002256
+Mean delay (secs):
+	Mean =		4.233390
+	Std. Dev. =	0.590906
+	Conf. Int. =	0.517952
+Throughput (Mbps):
+	Mean =		0.202839
+	Std. Dev. =	0.056429
+	Conf. Int. =	0.049462
+
+
+--	(Go-Back-N, window_size == 1000)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 0 -wsize 1000 -er 0.1 -tr_speed 10000000 -location 3
+Go-Back-N mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		1112.400000
+	Std. Dev. =	42.793691
+	Conf. Int. =	37.510324
+Received packets:
+	Mean =		138.000000
+	Std. Dev. =	34.044089
+	Conf. Int. =	29.840960
+Mean number of transm/packet:
+	Mean =		10.366690
+	Std. Dev. =	0.644721
+	Conf. Int. =	0.565123
+Mean number of errors:
+	Mean =		0.095752
+	Std. Dev. =	0.003346
+	Conf. Int. =	0.002933
+Mean delay (secs):
+	Mean =		5.119178
+	Std. Dev. =	0.676356
+	Conf. Int. =	0.592852
+Throughput (Mbps):
+	Mean =		0.118777
+	Std. Dev. =	0.033347
+	Conf. Int. =	0.029230
+
+
+--	(Selective Repeat, window_size == 2)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 1 -wsize 2 -er 0.1 -tr_speed 10000000 -location 3
+Selective-Repeat mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		57.800000
+	Std. Dev. =	9.549869
+	Conf. Int. =	8.370829
+Received packets:
+	Mean =		56.200000
+	Std. Dev. =	9.418068
+	Conf. Int. =	8.255300
+Mean number of transm/packet:
+	Mean =		1.134814
+	Std. Dev. =	0.109186
+	Conf. Int. =	0.095706
+Mean number of errors:
+	Mean =		0.109444
+	Std. Dev. =	0.070230
+	Conf. Int. =	0.061559
+Mean delay (secs):
+	Mean =		0.184580
+	Std. Dev. =	0.038564
+	Conf. Int. =	0.033803
+Throughput (Mbps):
+	Mean =		0.048210
+	Std. Dev. =	0.007856
+	Conf. Int. =	0.006886
+
+
+--	(Selective Repeat, window_size == 11)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 1 -wsize 11 -er 0.1 -tr_speed 10000000 -location 3
+Selective-Repeat mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		232.000000
+	Std. Dev. =	31.336879
+	Conf. Int. =	27.467986
+Received packets:
+	Mean =		229.000000
+	Std. Dev. =	33.911650
+	Conf. Int. =	29.724872
+Mean number of transm/packet:
+	Mean =		1.214616
+	Std. Dev. =	0.084398
+	Conf. Int. =	0.073978
+Mean number of errors:
+	Mean =		0.102711
+	Std. Dev. =	0.022311
+	Conf. Int. =	0.019556
+Mean delay (secs):
+	Mean =		0.171180
+	Std. Dev. =	0.010560
+	Conf. Int. =	0.009256
+Throughput (Mbps):
+	Mean =		0.197409
+	Std. Dev. =	0.025537
+	Conf. Int. =	0.022384
+
+
+--	(Selective Repeat, window_size == 51)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 1 -wsize 51 -er 0.1 -tr_speed 10000000 -location 3
+Selective-Repeat mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		695.800000
+	Std. Dev. =	89.225557
+	Conf. Int. =	78.209649
+Received packets:
+	Mean =		674.800000
+	Std. Dev. =	76.142629
+	Conf. Int. =	66.741957
+Mean number of transm/packet:
+	Mean =		1.529968
+	Std. Dev. =	0.133532
+	Conf. Int. =	0.117046
+Mean number of errors:
+	Mean =		0.093451
+	Std. Dev. =	0.003393
+	Conf. Int. =	0.002974
+Mean delay (secs):
+	Mean =		0.167629
+	Std. Dev. =	0.004334
+	Conf. Int. =	0.003799
+Throughput (Mbps):
+	Mean =		0.579671
+	Std. Dev. =	0.072526
+	Conf. Int. =	0.063572
+
+
+--	(Selective Repeat, window_size == 152)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 1 -wsize 152 -er 0.1 -tr_speed 10000000 -location 3
+Selective-Repeat mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		1104.600000
+	Std. Dev. =	35.472525
+	Conf. Int. =	31.093039
+Received packets:
+	Mean =		1104.400000
+	Std. Dev. =	35.032842
+	Conf. Int. =	30.707640
+Mean number of transm/packet:
+	Mean =		1.778164
+	Std. Dev. =	0.176699
+	Conf. Int. =	0.154883
+Mean number of errors:
+	Mean =		0.095308
+	Std. Dev. =	0.009341
+	Conf. Int. =	0.008188
+Mean delay (secs):
+	Mean =		0.168919
+	Std. Dev. =	0.005263
+	Conf. Int. =	0.004613
+Throughput (Mbps):
+	Mean =		0.938564
+	Std. Dev. =	0.028554
+	Conf. Int. =	0.025028
+
+
+--	(Selective Repeat, window_size == 510)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 1 -wsize 510 -er 0.1 -tr_speed 10000000 -location 3
+Selective-Repeat mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		1048.600000
+	Std. Dev. =	19.565275
+	Conf. Int. =	17.149720
+Received packets:
+	Mean =		1048.000000
+	Std. Dev. =	19.352002
+	Conf. Int. =	16.962778
+Mean number of transm/packet:
+	Mean =		2.186474
+	Std. Dev. =	0.321043
+	Conf. Int. =	0.281407
+Mean number of errors:
+	Mean =		0.097732
+	Std. Dev. =	0.006978
+	Conf. Int. =	0.006117
+Mean delay (secs):
+	Mean =		0.171882
+	Std. Dev. =	0.004740
+	Conf. Int. =	0.004155
+Throughput (Mbps):
+	Mean =		0.900178
+	Std. Dev. =	0.022641
+	Conf. Int. =	0.019846
+
+
+--	(Selective Repeat, window_size == 1000)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 1 -wsize 1000 -er 0.1 -tr_speed 10000000 -location 3
+Selective-Repeat mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		1052.800000
+	Std. Dev. =	11.713240
+	Conf. Int. =	10.267108
+Received packets:
+	Mean =		1052.200000
+	Std. Dev. =	11.903781
+	Conf. Int. =	10.434124
+Mean number of transm/packet:
+	Mean =		2.443536
+	Std. Dev. =	0.296858
+	Conf. Int. =	0.260207
+Mean number of errors:
+	Mean =		0.097879
+	Std. Dev. =	0.002381
+	Conf. Int. =	0.002087
+Mean delay (secs):
+	Mean =		0.203464
+	Std. Dev. =	0.005941
+	Conf. Int. =	0.005207
+Throughput (Mbps):
+	Mean =		0.923096
+	Std. Dev. =	0.040430
+	Conf. Int. =	0.035438
+
+
+--(2o πείραμα)
+--	(Go-Back-N, error_rate == 0.015)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 0 -wsize 150 -er 0.015 -tr_speed 10000000 -location 3
+Go-Back-N mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		2095.400000
+	Std. Dev. =	191.232319
+	Conf. Int. =	167.622519
+Received packets:
+	Mean =		1948.600000
+	Std. Dev. =	191.900495
+	Conf. Int. =	168.208200
+Mean number of transm/packet:
+	Mean =		2.946152
+	Std. Dev. =	0.297903
+	Conf. Int. =	0.261124
+Mean number of errors:
+	Mean =		0.014199
+	Std. Dev. =	0.002220
+	Conf. Int. =	0.001946
+Mean delay (secs):
+	Mean =		0.593665
+	Std. Dev. =	0.081293
+	Conf. Int. =	0.071257
+Throughput (Mbps):
+	Mean =		1.648694
+	Std. Dev. =	0.162739
+	Conf. Int. =	0.142647
+
+
+--	(Go-Back-N, error_rate == 0.15)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 0 -wsize 150 -er 0.15 -tr_speed 10000000 -location 3
+Go-Back-N mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		308.400000
+	Std. Dev. =	18.420098
+	Conf. Int. =	16.145928
+Received packets:
+	Mean =		161.400000
+	Std. Dev. =	20.911719
+	Conf. Int. =	18.329930
+Mean number of transm/packet:
+	Mean =		15.047580
+	Std. Dev. =	1.088062
+	Conf. Int. =	0.953729
+Mean number of errors:
+	Mean =		0.148579
+	Std. Dev. =	0.005949
+	Conf. Int. =	0.005214
+Mean delay (secs):
+	Mean =		4.736822
+	Std. Dev. =	1.005625
+	Conf. Int. =	0.881469
+Throughput (Mbps):
+	Mean =		0.137170
+	Std. Dev. =	0.017864
+	Conf. Int. =	0.015658
+
+
+--	(Go-Back-N, error_rate == 0.35)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 0 -wsize 150 -er 0.35 -tr_speed 10000000 -location 3
+Go-Back-N mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		197.000000
+	Std. Dev. =	20.037465
+	Conf. Int. =	17.563612
+Received packets:
+	Mean =		47.000000
+	Std. Dev. =	20.037465
+	Conf. Int. =	17.563612
+Mean number of transm/packet:
+	Mean =		19.368360
+	Std. Dev. =	1.801934
+	Conf. Int. =	1.579465
+Mean number of errors:
+	Mean =		0.348337
+	Std. Dev. =	0.007096
+	Conf. Int. =	0.006220
+Mean delay (secs):
+	Mean =		4.202734
+	Std. Dev. =	1.354035
+	Conf. Int. =	1.186864
+Throughput (Mbps):
+	Mean =		0.040943
+	Std. Dev. =	0.018902
+	Conf. Int. =	0.016569
+
+
+--	(Go-Back-N, error_rate == 0.51)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 0 -wsize 150 -er 0.51 -tr_speed 10000000 -location 3
+Go-Back-N mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		169.200000
+	Std. Dev. =	7.791020
+	Conf. Int. =	6.829131
+Received packets:
+	Mean =		19.200000
+	Std. Dev. =	7.791020
+	Conf. Int. =	6.829131
+Mean number of transm/packet:
+	Mean =		18.090260
+	Std. Dev. =	4.472515
+	Conf. Int. =	3.920333
+Mean number of errors:
+	Mean =		0.509720
+	Std. Dev. =	0.012595
+	Conf. Int. =	0.011040
+Mean delay (secs):
+	Mean =		3.799116
+	Std. Dev. =	1.185261
+	Conf. Int. =	1.038927
+Throughput (Mbps):
+	Mean =		0.019606
+	Std. Dev. =	0.006522
+	Conf. Int. =	0.005717
+
+
+--	(Selective-Repeat, error_rate == 0.015)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 1 -wsize 150 -er 0.015 -tr_speed 10000000 -location 3
+Selective-Repeat mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		1595.000000
+	Std. Dev. =	187.161695
+	Conf. Int. =	164.054459
+Received packets:
+	Mean =		1594.200000
+	Std. Dev. =	186.809261
+	Conf. Int. =	163.745537
+Mean number of transm/packet:
+	Mean =		1.037064
+	Std. Dev. =	0.036708
+	Conf. Int. =	0.032176
+Mean number of errors:
+	Mean =		0.013823
+	Std. Dev. =	0.000873
+	Conf. Int. =	0.000765
+Mean delay (secs):
+	Mean =		0.138481
+	Std. Dev. =	0.000371
+	Conf. Int. =	0.000325
+Throughput (Mbps):
+	Mean =		1.364744
+	Std. Dev. =	0.173706
+	Conf. Int. =	0.152260
+
+
+--	(Selective-Repeat, error_rate == 0.15)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 1 -wsize 150 -er 0.15 -tr_speed 10000000 -location 3
+Selective-Repeat mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		1068.800000
+	Std. Dev. =	41.239544
+	Conf. Int. =	36.148054
+Received packets:
+	Mean =		1067.400000
+	Std. Dev. =	41.331586
+	Conf. Int. =	36.228732
+Mean number of transm/packet:
+	Mean =		2.261882
+	Std. Dev. =	0.095461
+	Conf. Int. =	0.083675
+Mean number of errors:
+	Mean =		0.146011
+	Std. Dev. =	0.006279
+	Conf. Int. =	0.005504
+Mean delay (secs):
+	Mean =		0.194093
+	Std. Dev. =	0.005575
+	Conf. Int. =	0.004886
+Throughput (Mbps):
+	Mean =		0.914835
+	Std. Dev. =	0.013708
+	Conf. Int. =	0.012015
+
+
+--	(Selective-Repeat, error_rate == 0.35)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 1 -wsize 150 -er 0.35 -tr_speed 10000000 -location 3
+Selective-Repeat mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		578.000000
+	Std. Dev. =	122.875954
+	Conf. Int. =	107.705522
+Received packets:
+	Mean =		549.800000
+	Std. Dev. =	132.382778
+	Conf. Int. =	116.038621
+Mean number of transm/packet:
+	Mean =		4.275118
+	Std. Dev. =	0.482699
+	Conf. Int. =	0.423104
+Mean number of errors:
+	Mean =		0.344677
+	Std. Dev. =	0.011712
+	Conf. Int. =	0.010266
+Mean delay (secs):
+	Mean =		0.350593
+	Std. Dev. =	0.031005
+	Conf. Int. =	0.027177
+Throughput (Mbps):
+	Mean =		0.484908
+	Std. Dev. =	0.080743
+	Conf. Int. =	0.070774
+
+
+--	(Selective-Repeat, error_rate == 0.51)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 1 -wsize 150 -er 0.51 -tr_speed 10000000 -location 3
+Selective-Repeat mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		394.200000
+	Std. Dev. =	50.246393
+	Conf. Int. =	44.042905
+Received packets:
+	Mean =		384.000000
+	Std. Dev. =	42.655598
+	Conf. Int. =	37.389280
+Mean number of transm/packet:
+	Mean =		5.861212
+	Std. Dev. =	0.313010
+	Conf. Int. =	0.274365
+Mean number of errors:
+	Mean =		0.500881
+	Std. Dev. =	0.009402
+	Conf. Int. =	0.008241
+Mean delay (secs):
+	Mean =		0.535196
+	Std. Dev. =	0.057193
+	Conf. Int. =	0.050132
+Throughput (Mbps):
+	Mean =		0.356302
+	Std. Dev. =	0.028070
+	Conf. Int. =	0.024605
+
+
+--	(ABP, error_rate == 0.015)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 0 -wsize 1 -er 0.015 -tr_speed 10000000 -location 3
+Go-Back-N mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		36.200000
+	Std. Dev. =	1.095445
+	Conf. Int. =	0.960200
+Received packets:
+	Mean =		35.200000
+	Std. Dev. =	1.095445
+	Conf. Int. =	0.960200
+Mean number of transm/packet:
+	Mean =		1.011428
+	Std. Dev. =	0.015648
+	Conf. Int. =	0.013716
+Mean number of errors:
+	Mean =		0.011111
+	Std. Dev. =	0.015215
+	Conf. Int. =	0.013336
+Mean delay (secs):
+	Mean =		0.141539
+	Std. Dev. =	0.009665
+	Conf. Int. =	0.008471
+Throughput (Mbps):
+	Mean =		0.029911
+	Std. Dev. =	0.001037
+	Conf. Int. =	0.000909
+
+
+--	(ABP, error_rate == 0.15)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 0 -wsize 1 -er 0.15 -tr_speed 10000000 -location 3
+Go-Back-N mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		26.200000
+	Std. Dev. =	3.834058
+	Conf. Int. =	3.360700
+Received packets:
+	Mean =		25.200000
+	Std. Dev. =	3.834058
+	Conf. Int. =	3.360700
+Mean number of transm/packet:
+	Mean =		1.179438
+	Std. Dev. =	0.100051
+	Conf. Int. =	0.087698
+Mean number of errors:
+	Mean =		0.173962
+	Std. Dev. =	0.075876
+	Conf. Int. =	0.066509
+Mean delay (secs):
+	Mean =		0.235591
+	Std. Dev. =	0.050488
+	Conf. Int. =	0.044255
+Throughput (Mbps):
+	Mean =		0.022073
+	Std. Dev. =	0.003485
+	Conf. Int. =	0.003055
+
+
+--	(ABP, error_rate == 0.35)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 0 -wsize 1 -er 0.35 -tr_speed 10000000 -location 3
+Go-Back-N mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		18.000000
+	Std. Dev. =	4.690416
+	Conf. Int. =	4.111331
+Received packets:
+	Mean =		17.200000
+	Std. Dev. =	4.381780
+	Conf. Int. =	3.840800
+Mean number of transm/packet:
+	Mean =		1.480350
+	Std. Dev. =	0.233571
+	Conf. Int. =	0.204734
+Mean number of errors:
+	Mean =		0.317986
+	Std. Dev. =	0.094530
+	Conf. Int. =	0.082859
+Mean delay (secs):
+	Mean =		0.433652
+	Std. Dev. =	0.138268
+	Conf. Int. =	0.121198
+Throughput (Mbps):
+	Mean =		0.015247
+	Std. Dev. =	0.003744
+	Conf. Int. =	0.003282
+
+
+--	(ABP, error_rate == 0.51)
+
+
+cse32537@hp6000ws23:~/Desktop/lab7/sclab7$ sh experiment.sh -sr 0 -wsize 1 -er 0.51 -tr_speed 10000000 -location 3
+Go-Back-N mode...
+Iteration 1/5...
+Iteration 2/5...
+Iteration 3/5...
+Iteration 4/5...
+Iteration 5/5...
+Statistics:
+Unique packets transmitted:
+	Mean =		12.600000
+	Std. Dev. =	3.209361
+	Conf. Int. =	2.813129
+Received packets:
+	Mean =		11.600000
+	Std. Dev. =	3.209361
+	Conf. Int. =	2.813129
+Mean number of transm/packet:
+	Mean =		1.771824
+	Std. Dev. =	0.233998
+	Conf. Int. =	0.205108
+Mean number of errors:
+	Mean =		0.464382
+	Std. Dev. =	0.069024
+	Conf. Int. =	0.060502
+Mean delay (secs):
+	Mean =		0.616284
+	Std. Dev. =	0.136282
+	Conf. Int. =	0.119456
+Throughput (Mbps):
+	Mean =		0.011005
+	Std. Dev. =	0.002452
+	Conf. Int. =	0.002149

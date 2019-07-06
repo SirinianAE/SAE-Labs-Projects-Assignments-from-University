@@ -1,0 +1,246 @@
+πείραμα #0
+=============================================================
+------------------------------------------------------------
+Generated Packets							: 7002
+Serviced Packets							: 6634
+Dropped	in queue 2-3						: 368
+Dropped	in other queues						: 0
+Delivery Ratio (%)							: 94.7444
+Mean packet delay (secs)					: 0.0247114
+Mean queueing delay in queue 2-3 (secs)		: 0.00364493
+Link utilization (%)						: 100
+------------------------------------------------------------
+============================================================
+
+πείραμα #1
+============================================================
+------------------------------------------------------------
+$ns queue-limit $n2 $n3 3
+
+Generated Packets			: 7002
+Serviced Packets			: 6627
+Dropped	in queue 2-3			: 375
+Dropped	in other queues			: 0
+Delivery Ratio (%)			: 94.6444
+Mean packet delay (secs)		: 0.0215758
+Mean queueing delay in queue 2-3 (secs)	: 0.000509352
+Link utilization (%)			: 100
+------------------------------------------------------------
+$ns queue-limit $n2 $n3 5
+
+Generated Packets			: 7002
+Serviced Packets			: 6629
+Dropped	in queue 2-3			: 373
+Dropped	in other queues			: 0
+Delivery Ratio (%)			: 94.673
+Mean packet delay (secs)		: 0.0224775
+Mean queueing delay in queue 2-3 (secs)	: 0.00141108
+Link utilization (%)			: 100
+------------------------------------------------------------
+$ns queue-limit $n2 $n3 8
+
+Generated Packets			: 7002
+Serviced Packets			: 6632
+Dropped	in queue 2-3			: 370
+Dropped	in other queues			: 0
+Delivery Ratio (%)			: 94.7158
+Mean packet delay (secs)		: 0.0238213
+Mean queueing delay in queue 2-3 (secs)	: 0.0027549
+Link utilization (%)			: 100
+------------------------------------------------------------
+$ns queue-limit $n2 $n3 12
+
+Generated Packets			: 7002
+Serviced Packets			: 6636
+Dropped	in queue 2-3			: 366
+Dropped	in other queues			: 0
+Delivery Ratio (%)			: 94.7729
+Mean packet delay (secs)		: 0.0255967
+Mean queueing delay in queue 2-3 (secs)	: 0.0045303
+Link utilization (%)			: 100
+------------------------------------------------------------
+$ns queue-limit $n2 $n3 15
+
+Generated Packets			: 7002
+Serviced Packets			: 6639
+Dropped	in queue 2-3			: 363
+Dropped	in other queues			: 0
+Delivery Ratio (%)			: 94.8158
+Mean packet delay (secs)		: 0.026916
+Mean queueing delay in queue 2-3 (secs)	: 0.0058496
+Link utilization (%)			: 100
+------------------------------------------------------------
+==============================================================
+
+πείραμα #2
+==============================================================
+------------------------------------------------------------
+$ns queue-limit $n2 $n3 10
+set int 0.0008
+
+Generated Packets			: 8752
+Serviced Packets			: 6885
+Dropped	in queue 2-3			: 1867
+Dropped	in other queues			: 0
+Delivery Ratio (%)			: 78.6677
+Mean packet delay (secs)		: 0.0247724
+Mean queueing delay in queue 2-3 (secs)	: 0.00370595
+Link utilization (%)			: 100
+------------------------------------------------------------
+
+------------------------------------------------------------
+$ns queue-limit $n2 $n3 10
+set int 0.0009
+
+Generated Packets			: 7779
+Serviced Packets			: 6746
+Dropped	in queue 2-3			: 1033
+Dropped	in other queues			: 0
+Delivery Ratio (%)			: 86.7207
+Mean packet delay (secs)		: 0.0248763
+Mean queueing delay in queue 2-3 (secs)	: 0.00380985
+Link utilization (%)			: 100
+------------------------------------------------------------
+
+------------------------------------------------------------
+$ns queue-limit $n2 $n3 10
+set int 0.002
+
+Generated Packets			: 3502
+Serviced Packets			: 3502
+Dropped	in queue 2-3			: 0
+Dropped	in other queues			: 0
+Delivery Ratio (%)			: 100
+Mean packet delay (secs)		: 0.0212955
+Mean queueing delay in queue 2-3 (secs)	: 0.000228879
+Link utilization (%)			: 100
+------------------------------------------------------------
+
+------------------------------------------------------------
+$ns queue-limit $n2 $n3 10
+set int 0.005
+
+Generated Packets			: 1402
+Serviced Packets			: 1402
+Dropped	in queue 2-3			: 0
+Dropped	in other queues			: 0
+Delivery Ratio (%)			: 100
+Mean packet delay (secs)		: 0.0212955
+Mean queueing delay in queue 2-3 (secs)	: 0.000228912
+Link utilization (%)			: 100
+------------------------------------------------------------
+
+------------------------------------------------------------
+$ns queue-limit $n2 $n3 10
+set int 0.01
+
+Generated Packets			: 702
+Serviced Packets			: 702
+Dropped	in queue 2-3			: 0
+Dropped	in other queues			: 0
+Delivery Ratio (%)			: 100
+Mean packet delay (secs)		: 0.0212955
+Mean queueing delay in queue 2-3 (secs)	: 0.000228966
+Link utilization (%)			: 100
+------------------------------------------------------------
+==============================================================
+
+πείραμα #3
+==============================================================
+------------------------------------------------------------
+$ns queue-limit $n2 $n3 10
+set int 0.001
+$ns duplex-link $n3 $n2 0.5Mb 10ms DropTail
+
+Generated Packets			: 7002
+Serviced Packets			: 2510
+Dropped	in queue 2-3			: 4492
+Dropped	in other queues			: 0
+Delivery Ratio (%)			: 35.8469
+Mean packet delay (secs)		: 0.0358748
+Mean queueing delay in queue 2-3 (secs)	: 0.0137418
+Link utilization (%)			: 100
+------------------------------------------------------------
+
+------------------------------------------------------------
+$ns queue-limit $n2 $n3 10
+set int 0.001
+$ns duplex-link $n3 $n2 0.8Mb 10ms DropTail
+
+Generated Packets			: 7002
+Serviced Packets			: 4009
+Dropped	in queue 2-3			: 2993
+Dropped	in other queues			: 0
+Delivery Ratio (%)			: 57.2551
+Mean packet delay (secs)		: 0.0285193
+Mean queueing delay in queue 2-3 (secs)	: 0.00698628
+Link utilization (%)			: 100
+------------------------------------------------------------
+
+------------------------------------------------------------
+$ns queue-limit $n2 $n3 10
+set int 0.001
+$ns duplex-link $n3 $n2 1Mb 10ms DropTail
+
+Generated Packets			: 7002
+Serviced Packets			: 4759
+Dropped	in queue 2-3			: 2243
+Dropped	in other queues			: 0
+Delivery Ratio (%)			: 67.9663
+Mean packet delay (secs)		: 0.0267087
+Mean queueing delay in queue 2-3 (secs)	: 0.00537571
+Link utilization (%)			: 100
+------------------------------------------------------------
+
+------------------------------------------------------------
+$ns queue-limit $n2 $n3 10
+set int 0.001
+$ns duplex-link $n3 $n2 2Mb 10ms DropTail
+
+Generated Packets			: 7002
+Serviced Packets			: 7002
+Dropped	in queue 2-3			: 0
+Dropped	in other queues			: 0
+Delivery Ratio (%)			: 100
+Mean packet delay (secs)		: 0.0211044
+Mean queueing delay in queue 2-3 (secs)	: 0.000171437
+Link utilization (%)			: 100
+------------------------------------------------------------
+
+------------------------------------------------------------
+$ns queue-limit $n2 $n3 10
+set int 0.001
+$ns duplex-link $n3 $n2 2.5Mb 10ms DropTail
+
+Generated Packets			: 7002
+Serviced Packets			: 7002
+Dropped	in queue 2-3			: 0
+Dropped	in other queues			: 0
+Delivery Ratio (%)			: 100
+Mean packet delay (secs)		: 0.0209901
+Mean queueing delay in queue 2-3 (secs)	: 0.000137149
+Link utilization (%)			: 100
+------------------------------------------------------------
+==============================================================
+
+ερώτηση #1
+==============================================================
+------------------------------------------------------------
+(23300)
++ 2.7 1 2 cbr 100 ------- 2 1.0 3.0 1700 3900
+- 2.7 1 2 cbr 100 ------- 2 1.0 3.0 1700 3900
+(23425)
+r 2.710533 1 2 cbr 100 ------- 2 1.0 3.0 1700 3900
++ 2.710533 2 3 cbr 100 ------- 2 1.0 3.0 1700 3900
+- 2.710533 2 3 cbr 100 ------- 2 1.0 3.0 1700 3900
+(23551)
+r 2.720914 2 3 cbr 100 ------- 2 1.0 3.0 1700 3900
+------------------------------------------------------------
+==============================================================
+
+ερώτηση #2
+==============================================================
+------------------------------------------------------------
+
+------------------------------------------------------------
+==============================================================
