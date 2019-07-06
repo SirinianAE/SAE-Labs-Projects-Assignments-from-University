@@ -1,0 +1,10 @@
+\*#name:		Sirinian Aram Emmanouil*\
+\*#AM:			2537*\
+\*#username:	cse32537*\
+
+program lel{
+	ae := 2;
+	ae := ae + 11;
+	print(ae);
+	a1 := 233;
+}
